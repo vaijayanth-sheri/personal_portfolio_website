@@ -11,3 +11,18 @@
   font-size: 0.9rem;
   color: var(--color-secondary);
 }
+
+/* Mobile (< 640px) */
+@media (max-width: 639px) {
+  .footer {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .footerContent {
+    font-size: 0.85rem;
+  }
+
+  .footerContent p {
+    margin-bottom: var(--space-2);
+  }
+}

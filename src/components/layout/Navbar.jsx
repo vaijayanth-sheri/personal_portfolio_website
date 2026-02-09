@@ -1,6 +1,7 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import { homeData } from '../../data/home.js';
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -12,13 +13,34 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isMobileMenuOpen]);
+
   return (
     <header className={styles.header}>
-      <nav className={styles.nav}>
+      <nav className={styles.nav} role="navigation" aria-label="Main navigation">
         <NavLink to="/" className={styles.logo}>
-          Owner Name // Builder
+          {homeData.hero.name} // Builder
         </NavLink>
-        <ul className={styles.navList}>
+
+        {/* Desktop Navigation */}
+        <ul className={styles.navList} role="list">
           {navLinks.map(({ path, label }) => (
             <li key={path}>
               <NavLink
@@ -32,6 +54,43 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+        {/* Hamburger Button */}
+        <button
+          className={styles.hamburger}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+          aria-expanded={isMobileMenuOpen}
+        >
+          <span className={styles.hamburgerIcon}></span>
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        {isMobileMenuOpen && (
+          <>
+            <div
+              className={styles.mobileOverlay}
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-hidden="true"
+            ></div>
+            <div className={styles.mobileMenu} role="dialog" aria-modal="true">
+              <ul className={styles.mobileNavList}>
+                {navLinks.map(({ path, label }) => (
+                  <li key={path}>
+                    <NavLink
+                      to={path}
+                      className={({ isActive }) =>
+                        isActive ? `${styles.mobileNavLink} ${styles.active}` : styles.mobileNavLink
+                      }
+                    >
+                      {label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </>
+        )}
       </nav>
     </header>
   );

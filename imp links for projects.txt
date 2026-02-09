@@ -1,0 +1,51 @@
+It's time we have added our real project links for deployments, code and other;
+below are detailed list of links for each project live demo and GitHub along with my profile links across various platforms. carefully assign each link with their respective project and my profile links accordingly. 
+
+GitHub profile: https://github.com/vaijayanth-sheri
+LinkedIn: https://www.linkedin.com/in/vaijayanth-sheri/
+Behance: https://www.behance.net/vaijayanth_sheri
+
+master thesis: GitHub: https://github.com/vaijayanth-sheri
+no live demo; 
+read thesis: https://drive.google.com/file/d/10tlKN6cyapfIhsNHrqVmKROKfFxzc5Mu/view?usp=sharing
+
+
+projects: 
+
+Hybrid PV+Wind+Storage Digital Twin:
+Live Demo: https://huggingface.co/spaces/Vaijayanth-sheri/project-hybrid-digital-twin
+GitHub: https://github.com/vaijayanth-sheri/Project_Hybrid_Digital_Twin
+
+
+pypsa-code-generator:
+Live Demo: https://huggingface.co/spaces/Vaijayanth-sheri/pypsa-code-generator
+GitHub: https://github.com/vaijayanth-sheri/pypsa-code-generator
+
+https://github.com/vaijayanth-sheri/Project_Hybrid_Digital_Twin:
+Live Demo: https://huggingface.co/spaces/Vaijayanth-sheri/project-solar-ev-configurator
+GitHub: https://github.com/vaijayanth-sheri/Project_Solar_EV_Configurator
+
+
+ev-solar-feasibility-calculator:
+Live Demo: https://huggingface.co/spaces/Vaijayanth-sheri/ev-solar-feasibility-calculator
+GitHub: https://github.com/vaijayanth-sheri/EV-Solar-Feasibility-Calculator
+
+GridAware :
+Live Demo: https://huggingface.co/spaces/Vaijayanth-sheri/gridaware
+GitHub: https://github.com/vaijayanth-sheri/GridAware-Smart-EV-Charging-Dashboard
+
+pvlib_data_generator_gui:
+Live Demo: https://pvlibdatageneratorgui-nhqbws6dkwrgp8ach48idz.streamlit.app/
+GitHub: https://github.com/vaijayanth-sheri/PVLib_data_generator_GUI
+
+Windpowerlib Dashboard:
+Live Demo: https://windpowerlibdatageneratorgui.streamlit.app/
+GitHub: https://github.com/vaijayanth-sheri/Windpowerlib_data_generator_GUI
+
+
+for courses and certifications:  remove master of engineering course 
+
+
+under the column Design & UX Portfolio: replace the item Autoplot interface design with project APPthaMitra (use existing information on this project)
+and link all the projects with my behance profile link provided above; 
+

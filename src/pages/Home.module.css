@@ -1,0 +1,132 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 6rem 0 4rem 0;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #b0bec5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: #4db6ac;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    color: #eceff1;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.summary {
+    font-size: 1.1rem;
+    color: #b0bec5;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section {
+    margin: 4rem 0;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.sectionTitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    border-left: 4px solid #4db6ac;
+    padding-left: 1rem;
+}
+
+.text {
+    font-size: 1.1rem;
+    color: #cfd8dc;
+    line-height: 1.7;
+}
+
+.collaborationBox {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 4rem 2rem;
+    background: linear-gradient(180deg, rgba(77, 182, 172, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 20px;
+}
+
+.collabTitle {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.collabText {
+    font-size: 1.15rem;
+    color: #b0bec5;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #4db6ac;
+    color: #000;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.button:hover {
+    background: #80cbc4;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .section {
+        padding: 2rem;
+    }
+}

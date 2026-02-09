@@ -1,0 +1,138 @@
+.card {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.role {
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.techTag {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.85rem;
+    background: rgba(255, 255, 255, 0.08);
+    /* Slightly lighter for readability */
+    border-radius: 100px;
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.summary {
+    font-size: 0.95rem;
+    color: #c0c0c0;
+    line-height: 1.6;
+    margin-bottom: auto;
+    /* Push impact/links to bottom */
+}
+
+.impact {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #d0d0d0;
+    font-style: italic;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.impact::before {
+    content: '⚡';
+    /* Visual cue for impact */
+    font-style: normal;
+}
+
+.card:hover .impact {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.links {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+.linkIcon {
+    color: #a0a0a0;
+    font-size: 1.25rem;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.linkIcon:hover {
+    color: #fff;
+}
+
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    display: block;
+}
+
+.topRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.arrowIcon {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card:hover .arrowIcon {
+    transform: translate(3px, -3px);
+    color: #fff;
+}

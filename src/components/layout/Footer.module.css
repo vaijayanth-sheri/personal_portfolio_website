@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  padding: var(--space-8) var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.footerContent {
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+}

@@ -1,0 +1,119 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #4db6ac;
+    font-weight: 500;
+}
+
+.intro {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #cfd8dc;
+    margin-bottom: 3rem;
+}
+
+.engagementSection {
+    margin-bottom: 3rem;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.categoryList {
+    display: list-item;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-left: 1.5rem;
+}
+
+.categoryItem {
+    /* background: rgba(255, 255, 255, 0.05); */
+    padding: 0.5rem 1rem;
+    /* border-radius: 8px; */
+    color: #b0bec5;
+    font-size: 1rem;
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
+    list-style-type: square;
+}
+
+.contactDetails {
+    background: rgba(77, 182, 172, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(77, 182, 172, 0.2);
+    margin-bottom: 3rem;
+}
+
+.detailRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.label {
+    width: 100px;
+    color: #90a4ae;
+    font-weight: 500;
+}
+
+.value a {
+    color: #4db6ac;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.value a:hover {
+    text-decoration: underline;
+    color: #80cbc4;
+}
+
+.closing {
+    text-align: center;
+    color: #607d8b;
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .detailRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .label {
+        width: auto;
+    }
+}

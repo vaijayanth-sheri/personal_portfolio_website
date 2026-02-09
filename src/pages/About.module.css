@@ -1,0 +1,151 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    color: #eceff1;
+}
+
+.section {
+    margin-bottom: 5rem;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #4db6ac;
+    border-bottom: 1px solid rgba(77, 182, 172, 0.3);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.aboutText {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #cfd8dc;
+    max-width: 800px;
+}
+
+.experienceList {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.experienceItem {
+    padding-left: 1.5rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    transition: border-left-color 0.3s;
+}
+
+.experienceItem:hover {
+    border-left-color: #4db6ac;
+}
+
+.roleHeader {
+    margin-bottom: 0.75rem;
+}
+
+.roleTitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.roleSubtitle {
+    font-size: 1rem;
+    color: #90a4ae;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.roleDate {
+    font-size: 0.9rem;
+    color: #546e7a;
+    text-transform: none;
+    letter-spacing: normal;
+    margin-left: 0.5rem;
+}
+
+.roleDescription {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #b0bec5;
+}
+
+.educationItem {
+    margin-bottom: 2.5rem;
+}
+
+.degree {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.institution {
+    font-size: 1.1rem;
+    color: #4db6ac;
+    margin-bottom: 0.75rem;
+}
+
+.eduDetails {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #b0bec5;
+}
+
+.contactContent {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #cfd8dc;
+    margin-bottom: 2rem;
+}
+
+.linkGroup {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contactLink {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.contactLink:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    border-color: #4db6ac;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .sectionTitle {
+        font-size: 1.75rem;
+    }
+
+    .roleTitle {
+        font-size: 1.25rem;
+    }
+}

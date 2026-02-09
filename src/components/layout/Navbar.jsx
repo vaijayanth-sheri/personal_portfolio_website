@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { homeData } from '../../data/home.js';
+import { FaHome, FaBolt, FaBriefcase, FaFlask, FaUser, FaEnvelope } from 'react-icons/fa';
 
 const navLinks = [
-  { path: '/', label: 'Home' },
-  { path: '/capabilities', label: 'Capabilities' },
-  { path: '/projects', label: 'Projects' },
-  { path: '/lab', label: 'Lab' },
-  { path: '/about', label: 'About' },
-  { path: '/contact', label: 'Contact' },
+  { path: '/', label: 'Home', icon: <FaHome /> },
+  { path: '/capabilities', label: 'Capabilities', icon: <FaBolt /> },
+  { path: '/projects', label: 'Projects', icon: <FaBriefcase /> },
+  { path: '/lab', label: 'Lab', icon: <FaFlask /> },
+  { path: '/about', label: 'About', icon: <FaUser /> },
+  { path: '/contact', label: 'Contact', icon: <FaEnvelope /> },
 ];
 
 const Navbar = () => {
@@ -41,7 +42,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <ul className={styles.navList} role="list">
-          {navLinks.map(({ path, label }) => (
+          {navLinks.map(({ path, label, icon }) => (
             <li key={path}>
               <NavLink
                 to={path}
@@ -49,6 +50,7 @@ const Navbar = () => {
                   isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                 }
               >
+                <span className={styles.navIcon}>{icon}</span>
                 {label}
               </NavLink>
             </li>
@@ -75,14 +77,16 @@ const Navbar = () => {
             ></div>
             <div className={styles.mobileMenu} role="dialog" aria-modal="true">
               <ul className={styles.mobileNavList}>
-                {navLinks.map(({ path, label }) => (
+                {navLinks.map(({ path, label, icon }) => (
                   <li key={path}>
                     <NavLink
                       to={path}
                       className={({ isActive }) =>
                         isActive ? `${styles.mobileNavLink} ${styles.active}` : styles.mobileNavLink
                       }
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
+                      <span className={styles.mobileNavIcon}>{icon}</span>
                       {label}
                     </NavLink>
                   </li>

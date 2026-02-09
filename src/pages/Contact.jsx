@@ -1,6 +1,7 @@
 import React from 'react';
 import { contactData } from '../data/contact';
 import styles from './Contact.module.css';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
   const { statement, engagement, contactInfo, closing } = contactData;
@@ -30,22 +31,31 @@ const Contact = () => {
         <p className={styles.contactText}>{contactInfo.text}</p>
 
         <div className={styles.detailRow}>
-          <span className={styles.label}>Email:</span>
-          <span className={styles.value}>
-            <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
-          </span>
+          <span className={styles.iconWrapper}><FaEnvelope className={styles.icon} /></span>
+          <div className={styles.detailContent}>
+            <span className={styles.label}>Email</span>
+            <span className={styles.value}>
+              <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+            </span>
+          </div>
         </div>
         <div className={styles.detailRow}>
-          <span className={styles.label}>GitHub:</span>
-          <span className={styles.value}>
-            <a href={contactInfo.github} target="_blank" rel="noopener noreferrer">github.com/vaijayanth-sheri</a>
-          </span>
+          <span className={styles.iconWrapper}><FaGithub className={styles.icon} /></span>
+          <div className={styles.detailContent}>
+            <span className={styles.label}>GitHub</span>
+            <span className={styles.value}>
+              <a href={contactInfo.github} target="_blank" rel="noopener noreferrer">github.com/vaijayanth-sheri</a>
+            </span>
+          </div>
         </div>
         <div className={styles.detailRow}>
-          <span className={styles.label}>LinkedIn:</span>
-          <span className={styles.value}>
-            <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/vaijayanth-sheri</a>
-          </span>
+          <span className={styles.iconWrapper}><FaLinkedin className={styles.icon} /></span>
+          <div className={styles.detailContent}>
+            <span className={styles.label}>LinkedIn</span>
+            <span className={styles.value}>
+              <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/vaijayanth-sheri</a>
+            </span>
+          </div>
         </div>
       </section>
 

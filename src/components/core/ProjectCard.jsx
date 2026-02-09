@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectCard.module.css';
+import TechIcon from '../../utils/iconMapping';
 
 const ProjectCard = ({ project }) => {
   const { id, title, role, summary, impact, tech, links } = project;
@@ -18,7 +19,10 @@ const ProjectCard = ({ project }) => {
 
           <div className={styles.techStack}>
             {tech.slice(0, 4).map((item, index) => (
-              <span key={index} className={styles.techTag}>{item}</span>
+              <span key={index} className={styles.techTag}>
+                <TechIcon name={item} className={styles.techIcon} />
+                {item}
+              </span>
             ))}
             {tech.length > 4 && <span className={styles.techTag}>+{tech.length - 4}</span>}
           </div>

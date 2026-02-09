@@ -12,6 +12,27 @@
   color: var(--color-secondary);
 }
 
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.socialLink {
+  color: var(--color-secondary);
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialLink:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
 /* Mobile (< 640px) */
 @media (max-width: 639px) {
   .footer {

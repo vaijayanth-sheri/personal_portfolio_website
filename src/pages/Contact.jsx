@@ -27,7 +27,7 @@ const Contact = () => {
 
       <section className={styles.contactDetails}>
         <h3 className={styles.sectionTitle}>{contactInfo.title}</h3>
-        <p style={{ marginBottom: '1.5rem', color: '#b0bec5' }}>{contactInfo.text}</p>
+        <p className={styles.contactText}>{contactInfo.text}</p>
 
         <div className={styles.detailRow}>
           <span className={styles.label}>Email:</span>

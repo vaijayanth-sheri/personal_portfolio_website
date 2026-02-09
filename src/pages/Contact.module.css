@@ -62,6 +62,11 @@
     list-style-type: square;
 }
 
+.contactText {
+    margin-bottom: var(--space-6); /* 1.5rem */
+    color: #b0bec5;
+}
+
 .contactDetails {
     background: rgba(77, 182, 172, 0.05);
     padding: 2rem;

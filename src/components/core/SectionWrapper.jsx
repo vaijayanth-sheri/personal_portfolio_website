@@ -1,9 +1,9 @@
 import React from 'react';
+import styles from './SectionWrapper.module.css';
 
-// This is a placeholder component.
 const SectionWrapper = ({ title, children }) => (
-  <section style={{ marginBottom: 'var(--space-16)' }}>
-    <h2 style={{ marginBottom: 'var(--space-8)' }}>{title}</h2>
+  <section className={styles.section}>
+    <h2 className={styles.title}>{title}</h2>
     {children}
   </section>
 );

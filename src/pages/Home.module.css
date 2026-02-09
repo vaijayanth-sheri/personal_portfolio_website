@@ -105,6 +105,11 @@
     transform: translateY(-2px);
 }
 
+.button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -117,6 +122,80 @@
     }
 }
 
+/* Small Mobile (< 480px) */
+@media (max-width: 479px) {
+    .container {
+        padding: 0 1rem 3rem 1rem;
+    }
+
+    .hero {
+        padding: 4rem 0 3rem 0;
+    }
+
+    .name {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .summary {
+        font-size: 0.95rem;
+    }
+
+    .section {
+        padding: 1.5rem;
+        margin: 2.5rem 0;
+    }
+
+    .sectionTitle {
+        font-size: 1.4rem;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+
+    .collaborationBox {
+        padding: 3rem 1.5rem;
+    }
+
+    .collabTitle {
+        font-size: 1.5rem;
+    }
+
+    .collabText {
+        font-size: 1rem;
+    }
+
+    .button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Medium Mobile (480px - 639px) */
+@media (min-width: 480px) and (max-width: 639px) {
+    .container {
+        padding: 0 1.5rem 3.5rem 1.5rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    .summary {
+        font-size: 1rem;
+    }
+}
+
+/* Existing tablet/desktop breakpoint */
 @media (max-width: 768px) {
     .name {
         font-size: 2.5rem;

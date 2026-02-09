@@ -38,39 +38,6 @@ const Projects = () => {
         </div>
       ) : (
         <div className={styles.sliderContainer}>
-          <style>
-            {`
-              .swiper-button-next, .swiper-button-prev {
-                color: #ffffff; 
-                background: rgba(0,0,0,0.5);
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                backdrop-filter: blur(5px);
-              }
-              .swiper-button-next:after, .swiper-button-prev:after {
-                font-size: 1.2rem;
-                font-weight: bold;
-              }
-              .swiper-pagination-bullet {
-                background: #ffffff;
-                opacity: 0.5;
-              }
-              .swiper-pagination-bullet-active {
-                opacity: 1;
-                background: #4db6ac;
-              }
-              .swiper-slide {
-                transition: all 0.3s;
-                opacity: 0.4;
-                transform: scale(0.9);
-              }
-              .swiper-slide-active {
-                opacity: 1;
-                transform: scale(1);
-              }
-            `}
-          </style>
           <Swiper
             modules={[Navigation, Pagination, EffectCoverflow]}
             grabCursor={true}
@@ -105,10 +72,10 @@ const Projects = () => {
                 spaceBetween: 50
               }
             }}
-            style={{ paddingBottom: '3rem', paddingTop: '1rem' }}
+            className={styles.swiper}
           >
             {projectsData.map((project) => (
-              <SwiperSlide key={project.id} style={{ maxWidth: '400px' }}>
+              <SwiperSlide key={project.id} className={styles.swiperSlide}>
                 <ProjectCard project={project} />
               </SwiperSlide>
             ))}

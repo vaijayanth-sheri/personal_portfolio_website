@@ -1,0 +1,7 @@
+.section {
+  margin-bottom: var(--space-16);
+}
+
+.title {
+  margin-bottom: var(--space-8);
+}

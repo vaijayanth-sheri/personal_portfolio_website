@@ -8,8 +8,7 @@ import {
     FaCodeBranch
 } from 'react-icons/fa';
 import {
-    SiStreamlit, SiPandas, SiPlotly, SiJinja, SiFigma, SiWeasyprint, SiSqlite,
-    SiVite, SiGooglesheets
+    SiStreamlit, SiPandas, SiPlotly, SiJinja, SiFigma, SiSqlite
 } from 'react-icons/si';
 import { MdOutlineDashboard, MdOutlineArchitecture, MdOutlineAutoGraph } from 'react-icons/md';
 import { TbPlugConnected } from 'react-icons/tb';
@@ -38,7 +37,7 @@ const iconMap = {
     'Matplotlib': <FaChartBar />,
     'Seaborn': <FaChartArea />,
     'Pydantic': <FaCodeBranch />,
-    'Vite': <SiVite color="#646CFF" />,
+    'Vite': <FaCogs color="#646CFF" />, // Fallback
 
     // Tools & Platforms
     'GitHub': <FaGithub />,
@@ -46,8 +45,8 @@ const iconMap = {
     'Docker': <FaDocker color="#2496ED" />,
     'AWS': <FaAws color="#232F3E" />,
     'Figma': <SiFigma color="#F24E1E" />,
-    'Make.com': <FaCogs color="#681585" />, // Fallback as SiIntegromat/SiMake might vary in versions
-    'Google Sheets': <SiGooglesheets color="#34A853" />,
+    'Make.com': <FaCogs color="#681585" />, // Fallback 
+    'Google Sheets': <FaTable color="#34A853" />, // Fallback
     'Gemini Pro': <FaRobot color="#8E44AD" />,
     'OpenWeatherMap': <FaCloudSun color="#FF9800" />,
     'ScrapingBee': <FaGlobe />,

@@ -18,19 +18,25 @@ const Home = () => {
 
       {/* Capabilities Snapshot */}
       <section className={styles.section}>
-        <h3 className={styles.sectionTitle}>{capabilities.title}</h3>
+        <h3 className={styles.sectionTitle}>
+          <span className={styles.icon}>{capabilities.icon}</span> {capabilities.title}
+        </h3>
         <p className={styles.text}>{capabilities.description}</p>
       </section>
 
       {/* Current Direction */}
       <section className={styles.section}>
-        <h3 className={styles.sectionTitle}>{currentFocus.title}</h3>
+        <h3 className={styles.sectionTitle}>
+          <span className={styles.icon}>{currentFocus.icon}</span> {currentFocus.title}
+        </h3>
         <p className={styles.text}>{currentFocus.description}</p>
       </section>
 
       {/* Collaboration Call to Action */}
       <section className={styles.collaborationBox}>
-        <h3 className={styles.collabTitle}>{collaboration.title}</h3>
+        <h3 className={styles.collabTitle}>
+          <span className={styles.icon}>{collaboration.icon}</span> {collaboration.title}
+        </h3>
         <p className={styles.collabText}>{collaboration.description}</p>
         <Link to="/contact" className={styles.button}>Let's Collaborate</Link>
       </section>

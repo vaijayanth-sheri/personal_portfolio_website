@@ -102,12 +102,6 @@ p {
   }
 }
 
-/* Hide Default Cursor on Desktop */
-@media (pointer: fine) {
-  *, *::before, *::after {
-    cursor: none !important;
-  }
-}
 
 /* Ambient Glow Animation */
 @keyframes pulseGlow {

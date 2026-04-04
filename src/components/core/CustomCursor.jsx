@@ -52,7 +52,6 @@ const CustomCursor = () => {
     };
 
     addEventListeners();
-    // Use a slight timeout to ensure DOM is rendered before attaching link hover events
     const timeout = setTimeout(handleLinkHoverEvents, 500);
 
     return () => {
@@ -67,29 +66,25 @@ const CustomCursor = () => {
     };
   }, []);
 
-  const cursorClasses = [
-    styles.cursor,
+  const glowClasses = [
+    styles.glow,
     clicked ? styles.clicked : '',
     linkHovered ? styles.hovered : '',
     hidden ? styles.hidden : ''
   ].join(' ');
 
-  // Do not render on touch devices
   if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
     return null;
   }
 
   return (
     <div
-      className={cursorClasses}
+      className={glowClasses}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`
       }}
-    >
-      <div className={styles.glow}></div>
-      <div className={styles.dot}></div>
-    </div>
+    ></div>
   );
 };
 

@@ -46,7 +46,7 @@
 .role {
     font-size: 0.9rem;
     text-transform: uppercase;
-    color: #4db6ac;
+    color: var(--color-accent);
     letter-spacing: 1.5px;
     font-weight: 600;
     display: block;
@@ -104,6 +104,7 @@
     overflow: hidden;
     margin-bottom: 3rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    cursor: zoom-in;
 }
 
 .heroImage {
@@ -126,7 +127,7 @@
 .sectionTitle {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    border-left: 4px solid #4db6ac;
+    border-left: 4px solid var(--color-accent);
     padding-left: 1rem;
     color: #eceff1;
 }
@@ -154,7 +155,7 @@
     content: '✓';
     position: absolute;
     left: 0;
-    color: #4db6ac;
+    color: var(--color-accent);
 }
 
 .sidebar {
@@ -200,8 +201,8 @@
 }
 
 .impactPanel {
-    background: linear-gradient(135deg, rgba(77, 182, 172, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-    border-color: rgba(77, 182, 172, 0.3);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    border-color: rgba(168, 85, 247, 0.3);
 }
 
 .impactText {
@@ -225,6 +226,7 @@
     overflow: hidden;
     height: 250px;
     background: #000;
+    cursor: zoom-in;
 }
 
 .galleryItem img {

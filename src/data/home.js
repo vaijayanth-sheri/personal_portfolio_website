@@ -1,3 +1,7 @@
+import paccemImg from '/media/PACCEM/header.png';
+import gridawareImg from '/media/Projet_Gridaware/header.png';
+import resimImg from '/media/hybrid_digital_twin/header.png';
+
 export const homeData = {
     hero: {
         name: "Vaijayanth Sheri",
@@ -25,7 +29,7 @@ export const homeData = {
             demo: "[TODO: add URL]",
             repo: "https://github.com/vaijayanth-sheri",
             writeup: "[TODO: add page]",
-            screenshot: "[TODO: add screenshot]",
+            screenshot: paccemImg,
         },
         {
             id: "gridaware",
@@ -37,7 +41,7 @@ export const homeData = {
             demo: "https://huggingface.co/spaces/Vaijayanth-sheri/gridaware",
             repo: "https://github.com/vaijayanth-sheri/GridAware-Smart-EV-Charging-Dashboard",
             writeup: "[TODO: add page]",
-            screenshot: "[TODO: add screenshot]",
+            screenshot: gridawareImg,
         },
         {
             id: "re-sim",
@@ -49,7 +53,7 @@ export const homeData = {
             demo: "https://huggingface.co/spaces/Vaijayanth-sheri/project-hybrid-digital-twin",
             repo: "https://github.com/vaijayanth-sheri/Project_Hybrid_Digital_Twin",
             writeup: "[TODO: add page]",
-            screenshot: "[TODO: add screenshot]",
+            screenshot: resimImg,
         },
     ],
 

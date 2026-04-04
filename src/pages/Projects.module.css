@@ -107,7 +107,7 @@
 
 :global(.swiper-pagination-bullet-active) {
     opacity: 1;
-    background: #4db6ac;
+    background: var(--color-accent);
 }
 
 /* Swiper Slide Effects */

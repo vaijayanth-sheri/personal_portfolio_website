@@ -9,6 +9,11 @@ const ProjectCard = ({ project }) => {
   return (
     <article className={styles.card}>
       <Link to={`/projects/${id}`} className={styles.cardLink} title="View Project Details">
+        {project.heroImage && !project.heroImage.includes('placehold.co') && (
+          <div className={styles.imageContainer}>
+             <img src={project.heroImage} alt={title} className={styles.heroImage} />
+          </div>
+        )}
         <div className={styles.content}>
           <div className={styles.topRow}>
             <span className={styles.role}>{role}</span>

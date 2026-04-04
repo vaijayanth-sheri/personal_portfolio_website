@@ -1,3 +1,35 @@
+import paccemImg from '/media/PACCEM/header.png';
+import gridawareImg from '/media/Projet_Gridaware/header.png';
+import resimImg from '/media/hybrid_digital_twin/header.png';
+
+import paccemPage1 from '/media/PACCEM/page-1.png';
+import paccemPage2 from '/media/PACCEM/page-2.png';
+
+import gridawarePage1 from '/media/Projet_Gridaware/page-1.png';
+import gridawarePage2 from '/media/Projet_Gridaware/page-2.png';
+import gridawarePage3 from '/media/Projet_Gridaware/page-3.png';
+
+import resimPage1 from '/media/hybrid_digital_twin/page-1.png';
+import resimPage2 from '/media/hybrid_digital_twin/page-2.png';
+
+import pvInvestImg from '/media/EV_feasibility_calculator/header.png';
+import pvInvestPage1 from '/media/EV_feasibility_calculator/page-1.png';
+import pvInvestPage2 from '/media/EV_feasibility_calculator/page-2.png';
+
+import solarEvImg from '/media/solar_EV_configurator/header.png';
+
+import pypsaGenImg from '/media/pypsa_code_generator/header.png';
+import pypsaGenPage1 from '/media/pypsa_code_generator/page-1.png';
+import pypsaGenPage2 from '/media/pypsa_code_generator/page-2.png';
+
+import pvlibGuiImg from '/media/PVLib_GUI/header.png';
+import pvlibGuiPage1 from '/media/PVLib_GUI/page-1.png';
+import pvlibGuiPage2 from '/media/PVLib_GUI/page-2.png';
+
+import windLibGuiImg from '/media/WindLib_GUI/header.png';
+import windLibGuiPage1 from '/media/WindLib_GUI/page-1.png';
+import windLibGuiPage2 from '/media/WindLib_GUI/page-2.png';
+
 export const projectsData = [
   {
     id: 'paccem',
@@ -21,11 +53,10 @@ export const projectsData = [
       '**Advanced Visualization**: Interactive Plotly charts for hourly dispatch, capacity mix, and cost breakdowns.',
       '**Automated Reporting**: Generates comprehensive simulation reports and NetCDF output files for full auditability.'
     ],
-    heroImage: 'https://placehold.co/1200x600/1a1a1a/FFF?text=PacCEM+GUI+Preview',
+    heroImage: paccemImg,
     gallery: [
-      'https://placehold.co/800x500/2a2a2a/FFF?text=Dashboard+Overview',
-      'https://placehold.co/800x500/2a2a2a/FFF?text=Optimization+Results',
-      'https://placehold.co/800x500/2a2a2a/FFF?text=Scenario+Configuration'
+      paccemPage1,
+      paccemPage2
     ],
     links: { github: 'https://github.com/vaijayanth-sheri' }, // Placeholder for master thesis code if specific repo not listed
   },
@@ -51,10 +82,11 @@ export const projectsData = [
       '**Interactive Visual Overlay**: Intuitive chart overlays showing exactly when to plug in relative to price spikes.',
       '**Fault Tolerance**: Caching system to handle API outages gracefully without breaking the user experience.'
     ],
-    heroImage: 'https://placehold.co/1200x600/102a43/FFF?text=GridAware+Dashboard',
+    heroImage: gridawareImg,
     gallery: [
-      'https://placehold.co/800x500/102a43/FFF?text=Charging+Optimization',
-      'https://placehold.co/800x500/102a43/FFF?text=Price+Analysis'
+      gridawarePage1,
+      gridawarePage2,
+      gridawarePage3
     ],
     links: {
       demo: 'https://huggingface.co/spaces/Vaijayanth-sheri/gridaware',
@@ -82,10 +114,10 @@ export const projectsData = [
       '**Professional Reporting**: One-click generation of polished, multi-page PDF reports using WeasyPrint.',
       '**Scenario Comparison**: Quickly toggle between different tariff structures and system costs.'
     ],
-    heroImage: 'https://placehold.co/1200x600/004d40/FFF?text=PV-Invest+Analysis',
+    heroImage: pvInvestImg,
     gallery: [
-      'https://placehold.co/800x500/004d40/FFF?text=Cash+Flow+Chart',
-      'https://placehold.co/800x500/004d40/FFF?text=PDF+Report+Sample'
+      pvInvestPage1,
+      pvInvestPage2
     ],
     links: {
       demo: 'https://huggingface.co/spaces/Vaijayanth-sheri/ev-solar-feasibility-calculator',
@@ -113,7 +145,7 @@ export const projectsData = [
       '**Integrated EV Planning**: Models driving needs (km/day) to right-size both solar and battery systems.',
       '**Modular Architecture**: Designed for plug-and-play addition of new battery models or tariff schemas.'
     ],
-    heroImage: 'https://placehold.co/1200x600/e65100/FFF?text=Solar+Configurator+Map',
+    heroImage: solarEvImg,
     gallery: [
       'https://placehold.co/800x500/e65100/FFF?text=Rooftop+Drawing',
       'https://placehold.co/800x500/e65100/FFF?text=System+Sizing+Results'
@@ -144,10 +176,10 @@ export const projectsData = [
       '**Smart Validation**: Prevents common logical errors before they reach the code level.',
       '**Seamless Export**: Copy-paste ready code blocks compatible with Jupyter Notebooks.'
     ],
-    heroImage: 'https://placehold.co/1200x600/4a148c/FFF?text=Code+Generator+UI',
+    heroImage: pypsaGenImg,
     gallery: [
-      'https://placehold.co/800x500/4a148c/FFF?text=Component+Form',
-      'https://placehold.co/800x500/4a148c/FFF?text=Generated+Script'
+      pypsaGenPage1,
+      pypsaGenPage2
     ],
     links: {
       demo: 'https://huggingface.co/spaces/Vaijayanth-sheri/pypsa-code-generator',
@@ -231,10 +263,10 @@ export const projectsData = [
       '**Battery Physics**: Includes round-trip efficiency and state-of-charge limits.',
       '**Educational Toggles**: Isolate systems to see individual contributions vs. combined output.'
     ],
-    heroImage: 'https://placehold.co/1200x600/01579b/FFF?text=RE+Simulator',
+    heroImage: resimImg,
     gallery: [
-      'https://placehold.co/800x500/01579b/FFF?text=System+Overview',
-      'https://placehold.co/800x500/01579b/FFF?text=Live+Generation+Chart'
+      resimPage1,
+      resimPage2
     ],
     links: {
       demo: 'https://huggingface.co/spaces/Vaijayanth-sheri/project-hybrid-digital-twin',
@@ -262,10 +294,10 @@ export const projectsData = [
       '**Data Visualization**: Instant plotting of generation profiles.',
       '**Export Capabilities**: Download results as CSV for further analysis.'
     ],
-    heroImage: 'https://placehold.co/1200x600/fbc02d/FFF?text=PVLib+GUI',
+    heroImage: pvlibGuiImg,
     gallery: [
-      'https://placehold.co/800x500/fbc02d/FFF?text=Input+Forms',
-      'https://placehold.co/800x500/fbc02d/FFF?text=Output+Graphs'
+      pvlibGuiPage1,
+      pvlibGuiPage2
     ],
     links: {
       demo: 'https://pvlibdatageneratorgui-nhqbws6dkwrgp8ach48idz.streamlit.app/',
@@ -293,10 +325,10 @@ export const projectsData = [
       '**Power Curve Analysis**: Visualize turbine power curves and output.',
       '**Simplified Workflow**: Streamlines the setup of wind power simulations.'
     ],
-    heroImage: 'https://placehold.co/1200x600/0288d1/FFF?text=Windpowerlib+GUI',
+    heroImage: windLibGuiImg,
     gallery: [
-      'https://placehold.co/800x500/0288d1/FFF?text=Turbine+Selection',
-      'https://placehold.co/800x500/0288d1/FFF?text=Simulation+Results'
+      windLibGuiPage1,
+      windLibGuiPage2
     ],
     links: {
       demo: 'https://windpowerlibdatageneratorgui.streamlit.app/',

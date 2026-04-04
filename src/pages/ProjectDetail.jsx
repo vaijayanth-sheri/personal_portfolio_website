@@ -1,16 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { projectsData } from '../data/projects';
+import ImageModal from '../components/core/ImageModal';
 import styles from './ProjectDetail.module.css';
 
 const ProjectDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const project = projectsData.find(p => p.id === id);
+    
+    const allImages = React.useMemo(() => {
+        if (!project) return [];
+        let imgs = [];
+        if (project.heroImage && !project.heroImage.includes('placehold.co')) {
+            imgs.push(project.heroImage);
+        }
+        if (project.gallery && project.gallery.length > 0) {
+            const validGallery = project.gallery.filter(g => typeof g === 'string' && !g.includes('placehold.co'));
+            imgs.push(...validGallery);
+        }
+        return imgs;
+    }, [project]);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [id]);
+    const [modalIndex, setModalIndex] = useState(null);
+
+    // Removed the window.scrollTo(0,0) here to allow native react-router scroll restoration
+    // to keep your scroll position on "Back".
 
     if (!project) {
         return (
@@ -23,6 +38,13 @@ const ProjectDetail = () => {
 
     return (
         <div className={styles.container}>
+            {modalIndex !== null && (
+                <ImageModal 
+                    images={allImages} 
+                    initialIndex={modalIndex}
+                    onClose={() => setModalIndex(null)} 
+                />
+            )}
             <Link to="/projects" className={styles.backButton}>
                 <span>←</span> Back to Projects
             </Link>
@@ -47,7 +69,14 @@ const ProjectDetail = () => {
                 </div>
             </header>
 
-            <div className={styles.heroImageWrapper}>
+            <div 
+                className={styles.heroImageWrapper} 
+                onClick={() => {
+                    const idx = allImages.indexOf(project.heroImage);
+                    if (idx !== -1) setModalIndex(idx);
+                }}
+                data-cursor-pointer="true"
+            >
                 <img src={project.heroImage} alt={project.title} className={styles.heroImage} />
             </div>
 
@@ -104,7 +133,18 @@ const ProjectDetail = () => {
                     <h2 className={styles.sectionTitle}>Gallery</h2>
                     <div className={styles.galleryGrid}>
                         {project.gallery.map((img, index) => (
-                            <div key={index} className={styles.galleryItem}>
+                            <div 
+                                key={index} 
+                                className={styles.galleryItem}
+                                onClick={() => {
+                                    const isPlaceholder = typeof img === 'string' && img.includes('placehold.co');
+                                    if (!isPlaceholder) {
+                                        const idx = allImages.indexOf(img);
+                                        if (idx !== -1) setModalIndex(idx);
+                                    }
+                                }}
+                                data-cursor-pointer="true"
+                            >
                                 <img src={img} alt={`Gallery ${index + 1}`} loading="lazy" />
                             </div>
                         ))}

@@ -1,0 +1,113 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    cursor: zoom-out;
+}
+
+.closeBtn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.closeBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.navBtnLeft, .navBtnRight {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.navBtnLeft {
+    left: 2rem;
+}
+
+.navBtnRight {
+    right: 2rem;
+}
+
+.navBtnLeft:hover, .navBtnRight:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.imageContainer {
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Allows scrolling if image is tall/wide */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Start at top for long images */
+    padding: 2rem 7rem;
+}
+
+.imageContainer::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.imageContainer::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.imageContainer::-webkit-scrollbar-thumb {
+    background: rgba(77, 182, 172, 0.5);
+    border-radius: 4px;
+}
+
+.imageContainer::-webkit-scrollbar-thumb:hover {
+    background: rgba(77, 182, 172, 0.8);
+}
+
+.fullImage {
+    /* If the user wants true original size allowing horizontal scroll, we'd use auto. 
+       Usually it's better to fit horizontally but scroll vertically if tall. */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    cursor: auto;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+}

@@ -84,7 +84,11 @@ const CustomCursor = () => {
         left: `${position.x}px`,
         top: `${position.y}px`
       }}
-    ></div>
+    >
+      <div className={styles.crosshairX}></div>
+      <div className={styles.crosshairY}></div>
+      <div className={styles.pulse}></div>
+    </div>
   );
 };
 

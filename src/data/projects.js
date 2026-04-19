@@ -1,3 +1,6 @@
+import solarAutoImg from '/media/solar auto layout/home.png';
+import solarAutoP1 from '/media/solar auto layout/page 1.png';
+import solarAutoP2 from '/media/solar auto layout/page 2.png';
 import paccemImg from '/media/PACCEM/header.png';
 import gridawareImg from '/media/Projet_Gridaware/header.png';
 import resimImg from '/media/hybrid_digital_twin/header.png';
@@ -30,7 +33,40 @@ import windLibGuiImg from '/media/WindLib_GUI/header.png';
 import windLibGuiPage1 from '/media/WindLib_GUI/page-1.png';
 import windLibGuiPage2 from '/media/WindLib_GUI/page-2.png';
 
+import workflowHomeImg from '/media/Jupyter Workflow manager/home.png';
+import workflowP1 from '/media/Jupyter Workflow manager/page 1.png';
+import workflowP2 from '/media/Jupyter Workflow manager/page 2.png';
+
+import plotHomeImg from '/media/Visual plot builder for Jupyter/home.png';
+import plotP1 from '/media/Visual plot builder for Jupyter/page 1.png';
+
+
 export const projectsData = [
+  {
+    id: 'solar-autolayout',
+    title: 'Solar AutoLayout & Energy Estimation',
+    role: 'Full-Stack Developer | System Architect',
+    duration: '2026',
+    summary: 'A full-stack web application that automates solar PV system design using GIS-based map inputs or rooftop images. Features a modular layout engine, integrated energy modeling via PVGIS, and multi-format engineering exports.',
+    impact: 'Reduced manual effort in solar layout planning from hours to minutes, enabling rapid engineering-grade PV design.',
+    tech: ['Next.js', 'FastAPI', 'Shapely', 'Leaflet', 'PVGIS API'],
+    techStackDetailed: {
+      'Frontend': 'Next.js, TypeScript, Tailwind CSS, Zustand',
+      'Backend': 'FastAPI (Python), Shapely, Pandas',
+      'Geospatial': 'Leaflet, Leaflet Draw, PyProj',
+      'Export': 'ezdxf (CAD), ReportLab (PDF), Pillow (PNG)'
+    },
+    overview: 'Solar AutoLayout is designed to streamline the complex process of photovoltaic system planning. By separating the UI from the heavy geometry computation, it allows users to precisely define installation areas on maps or images. The tool then automatically places panels while respecting real-world constraints like thermal gaps and edge clearances, providing immediate energy yield KPIs.',
+    features: [
+      '**Automated Layout Engine**: Grid-based panel placement with obstacle handling and orientation optimization.',
+      '**Dual Input Modes**: GIS-based planning on interactive maps or calibrated image-based layouts.',
+      '**Energy Yield Modeling**: Integrated PVGIS API for location-specific annual and monthly generation estimates.',
+      '**Professional Export Suite**: One-click generation of CAD-ready DXF files and PDF engineering reports.'
+    ],
+    heroImage: solarAutoImg,
+    gallery: [solarAutoP1, solarAutoP2],
+    links: { github: 'https://github.com/vaijayanth-sheri/Solar_AutoLayout' }, // Assuming name from context
+  },
   {
     id: 'paccem',
     title: 'PacCEM: Capacity Expansion GUI',
@@ -334,5 +370,55 @@ export const projectsData = [
       demo: 'https://windpowerlibdatageneratorgui.streamlit.app/',
       github: 'https://github.com/vaijayanth-sheri/Windpowerlib_data_generator_GUI'
     },
+  },
+  {
+    id: 'workflow-mgr',
+    title: 'Jupyter Workflow Manager',
+    role: 'Full-Stack Extension Engineer',
+    duration: '2026',
+    summary: 'A VS Code extension introducing a workflow-first abstraction layer for iterative code generation in Jupyter, bridging the gap between AI-generated code and systematic engineering.',
+    impact: 'Eliminates structure loss during iterative development and improves reproducibility of AI-assisted workflows.',
+    tech: ['TypeScript', 'VS Code API', 'Node.js', 'Python'],
+    techStackDetailed: {
+      'Extension': 'TypeScript, VS Code Extension API',
+      'Logic': 'Workflow Abstraction Layer, State Management',
+      'Storage': 'Local JSON (.workflow.json)',
+      'Integration': 'File-aware context switching, Smart code injection'
+    },
+    overview: 'Jupyter Workflow Manager solves the fragmentation problem in AI-assisted coding by treating problem-solving steps as the primary unit of development. It allows engineers to define structured workflows, maintain multiple versions per step, and dynamically reconstruct scripts without losing previous iterations or restarting notebooks.',
+    features: [
+      '**Step-Based Workflow System**: Modularize complex tasks into independent, versioned steps.',
+      '**Version Control per Step**: Track multiple AI-generated implementations for every logic block.',
+      '**Smart Code Injection**: Automatically update notebook cells or scripts via a marker-based system.',
+      '**Local-First Privacy**: Ensures all workflow data remains local to the project directory.'
+    ],
+    heroImage: workflowHomeImg,
+    gallery: [workflowP1, workflowP2],
+    links: { github: 'https://github.com/vaijayanth-sheri/Jupyter_workflow_manager' },
+  },
+  {
+    id: 'plot-builder',
+    title: 'Visual Plot Builder for Jupyter',
+    role: 'Tool Architect',
+    duration: '2026',
+    summary: 'Production-grade VS Code extension for generating production-quality Python plotting code through a visual interface, unifying multiple visualization libraries.',
+    impact: 'Reduces time spent on repetitive plotting tasks and improves code consistency across data analysis workflows.',
+    tech: ['TypeScript', 'React', 'Python', 'Pandas', 'Matplotlib', 'Seaborn'],
+    techStackDetailed: {
+      'Frontend': 'React-based Webview',
+      'Backend': 'VS Code Jupyter API, Python Bridge',
+      'Code Gen': 'Strategy Pattern for multi-library support',
+      'Execution': 'Runtime kernel execution for DataFrame inspection'
+    },
+    overview: 'This extension bridges the gap between UI-driven exploration and code-centric workflows. It enables users to configure complex plots visually—selecting dataframes, axes, and libraries—while generating clean, reusable Python code that is injected directly into their Jupyter environment.',
+    features: [
+      '**Notebook-Aware Data Interaction**: Dynamically detects active kernels and inspects live DataFrames.',
+      '**Multi-Library Support**: Generates code for Matplotlib and Seaborn using a unified interface.',
+      '**Strategy-Based Code Gen**: Produces production-quality fig/ax patterns with proper labeling.',
+      '**Zero-Manual Adjustment**: Injected code is execution-ready with legends and titles pre-configured.'
+    ],
+    heroImage: plotHomeImg,
+    gallery: [plotP1],
+    links: { github: 'https://github.com/vaijayanth-sheri/Jupyter_plot_helper' },
   },
 ];

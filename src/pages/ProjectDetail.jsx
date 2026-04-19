@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { projectsData } from '../data/projects';
+import { labData } from '../data/lab';
 import ImageModal from '../components/core/ImageModal';
 import styles from './ProjectDetail.module.css';
 
 const ProjectDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const project = projectsData.find(p => p.id === id);
+    
+    // Search in both datasets
+    const project = projectsData.find(p => p.id === id) || labData.find(p => p.id === id);
+    const isLabProject = labData.some(p => p.id === id);
+    const backPath = isLabProject ? '/lab' : '/projects';
+    const backLabel = isLabProject ? 'Back to Lab' : 'Back to Projects';
     
     const allImages = React.useMemo(() => {
         if (!project) return [];
@@ -31,7 +37,7 @@ const ProjectDetail = () => {
         return (
             <div className={styles.notFound}>
                 <h2>Project not found</h2>
-                <Link to="/projects" className={styles.backLink}>← Back to Projects</Link>
+                <Link to={backPath} className={styles.backLink}>← {backLabel}</Link>
             </div>
         );
     }
@@ -45,8 +51,8 @@ const ProjectDetail = () => {
                     onClose={() => setModalIndex(null)} 
                 />
             )}
-            <Link to="/projects" className={styles.backButton}>
-                <span>←</span> Back to Projects
+            <Link to={backPath} className={styles.backButton}>
+                <span>←</span> {backLabel}
             </Link>
 
             <header className={styles.header}>

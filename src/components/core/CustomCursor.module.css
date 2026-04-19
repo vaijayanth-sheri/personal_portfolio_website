@@ -2,27 +2,62 @@
   position: fixed;
   top: 0;
   left: 0;
-  margin-top: -32.5px; /* Center 65x65 element */
-  margin-left: -32.5px;
-  width: 65px;
-  height: 65px;
-  background-color: var(--color-accent);
-  border-radius: 50%;
-  filter: blur(20px);
-  opacity: 0.2;
-  z-index: 99990;
-  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
   pointer-events: none;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s var(--transition-fast);
+}
+
+.crosshairX, .crosshairY {
+  position: absolute;
+  background-color: var(--color-accent);
+  transition: all 0.2s var(--transition-fast);
+}
+
+.crosshairX {
+  width: 20px;
+  height: 1px;
+}
+
+.crosshairY {
+  width: 1px;
+  height: 20px;
+}
+
+.pulse {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: energyPulse 3s infinite ease-out;
+}
+
+@keyframes energyPulse {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(3); opacity: 0.1; }
+  100% { transform: scale(1); opacity: 0.3; }
 }
 
 .clicked {
-  transform: scale(0.6);
-  opacity: 0.2;
+  transform: scale(0.7);
 }
 
-.hovered {
-  transform: scale(2);
-  opacity: 0.25;
+.hovered .crosshairX {
+  width: 30px;
+  background-color: #fff;
+}
+
+.hovered .crosshairY {
+  height: 30px;
+  background-color: #fff;
 }
 
 .hidden {

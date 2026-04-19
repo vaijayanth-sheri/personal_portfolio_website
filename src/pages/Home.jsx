@@ -25,26 +25,17 @@ const Home = () => {
   return (
     <div className={styles.container}>
       
-      {/* Mesh Gradients behind container */}
-      <div className={styles.meshBg}>
-        <div className={styles.meshBlob1}></div>
-        <div className={styles.meshBlob2}></div>
-        <div className={styles.meshBlob3}></div>
-      </div>
-
       {/* 1 · Hero */}
       <section className={styles.heroSection}>
         <motion.div 
           className={styles.heroInner}
-          initial="hidden"
-          animate="visible"
-          variants={fadeInVariant}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className={styles.heroPhoto}>
             <div className={styles.photoWrapper}>
               <img src={profilePhoto} alt="Vaijayanth Sheri" className={styles.profileImg} />
-              <div className={styles.photoGlow}></div>
             </div>
           </div>
           <div className={styles.heroText}>
@@ -62,76 +53,92 @@ const Home = () => {
       {/* 2 · Selected Work */}
       <section className={styles.selectedWorkSection}>
         <motion.div
-           initial="hidden"
-           whileInView="visible"
+           initial={{ opacity: 0 }}
+           whileInView={{ opacity: 1 }}
            viewport={{ once: true, margin: "-100px" }}
-           variants={fadeInVariant}
-           transition={{ duration: 0.6 }}
+           transition={{ duration: 0.8 }}
         >
           <h2 className={styles.sectionHeading}>Featured Projects</h2>
           <div className={styles.swiperWrapper}>
             <Swiper
-              modules={[Navigation, EffectCoverflow]}
+              modules={[Navigation]}
               grabCursor={false}
-              centeredSlides={true}
-              initialSlide={1}
               slidesPerView={'auto'}
-              spaceBetween={24}
+              spaceBetween={0}
               navigation={true}
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 80,
-                modifier: 2,
-                slideShadows: false,
-              }}
               breakpoints={{
-                0: { slidesPerView: 1, spaceBetween: 16 },
-                768: { slidesPerView: 1.5, spaceBetween: 24 },
-                1024: { slidesPerView: 2.2, spaceBetween: 28 },
+                0: { slidesPerView: 1 },
+                1024: { slidesPerView: 1.2 },
+                1400: { slidesPerView: 1.5 },
               }}
               className={styles.swiper}
             >
               {selectedWork.map((project) => (
                 <SwiperSlide key={project.id} className={styles.swiperSlide}>
-                  <Tilt 
-                    tiltMaxAngleX={4} 
-                    tiltMaxAngleY={4} 
-                    glareEnable={true} 
-                    glareMaxOpacity={0.15} 
-                    glareColor="#ffffff" 
-                    glarePosition="all"
-                    className={styles.tiltWrapper}
-                  >
-                    <article className={styles.projectCard} data-cursor-pointer="true">
-                      <div className={styles.projectScreenshot}>
-                        {project.screenshot && project.screenshot.includes('[TODO') ? (
-                          <span className={styles.screenshotPlaceholder}>{project.screenshot}</span>
-                        ) : (
-                          <img src={project.screenshot} alt={`${project.name} Screenshot`} className={styles.screenshotImg} />
-                        )}
-                      </div>
-                      <div className={styles.projectContent}>
+                  <article className={styles.projectCard} data-id={project.id.toUpperCase()} data-cursor-pointer="true">
+                    <div className={styles.projectScreenshot}>
+                      {project.screenshot && project.screenshot.includes('[TODO') ? (
+                        <span className={styles.screenshotPlaceholder}>{project.screenshot}</span>
+                      ) : (
+                        <img src={project.screenshot} alt={`${project.name} Screenshot`} className={styles.screenshotImg} />
+                      )}
+                    </div>
+                    <div className={styles.projectContent}>
+                      <div className={styles.projectHeader}>
                         <h3 className={styles.projectName}>{project.name}</h3>
-                        <p className={styles.projectOneLiner}>{project.oneLiner}</p>
-                        <ul className={styles.projectFlow}>
-                          <li><strong>Problem:</strong> {project.problem}</li>
-                          <li><strong>Approach:</strong> {project.approach}</li>
-                          <li><strong>Output:</strong> {project.output}</li>
-                        </ul>
-                        <div className={styles.projectLinks}>
-                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true">Demo</a>
-                          <a href={project.repo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true">Repo</a>
-                        </div>
+                        {project.isLab && <span className={styles.labBadge}>LAB / ONGOING</span>}
                       </div>
-                    </article>
-                  </Tilt>
+                      <p className={styles.projectOneLiner}>{project.oneLiner}</p>
+                      <ul className={styles.projectFlow}>
+                        <li><strong>The Challenge</strong> {project.problem}</li>
+                        <li><strong>The Solution</strong> {project.approach}</li>
+                        <li><strong>The Outcome</strong> {project.output}</li>
+                      </ul>
+                      <div className={styles.projectLinks}>
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true">Execute Demo</a>
+                        <a href={project.repo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true">Source Code</a>
+                      </div>
+                    </div>
+                  </article>
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
           <div className={styles.moreProjects}>
-            <Link to="/projects" className={styles.moreLink} data-cursor-pointer="true">More Projects →</Link>
+            <Link to="/projects" className={styles.moreLink} data-cursor-pointer="true">Access Full Archive //</Link>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 2.5 · The Lab (Ongoing) */}
+      <section className={styles.labSection}>
+        <motion.div
+           initial={{ opacity: 0 }}
+           whileInView={{ opacity: 1 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.8 }}
+        >
+          <div className={styles.labHeader}>
+            <h2 className={styles.sectionHeading}>The Lab</h2>
+            <p className={styles.sectionSub}>Active Research & Development // Ongoing Systems</p>
+          </div>
+          
+          <div className={styles.labGrid}>
+            {homeData.labProjects.map((project) => (
+              <article key={project.id} className={styles.labCard} data-id={project.id.toUpperCase()} data-cursor-pointer="true">
+                <div className={styles.labScreenshot}>
+                  <img src={project.screenshot} alt={project.name} />
+                  <div className={styles.labOverlay}>
+                    <span className={styles.statusBadge}>IN_DEVELOPMENT</span>
+                  </div>
+                </div>
+                <div className={styles.labContent}>
+                  <h3 className={styles.labName}>{project.name}</h3>
+                  <p className={styles.labOneLiner}>{project.oneLiner}</p>
+                  <p className={styles.labDesc}>{project.approach}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </motion.div>
       </section>
@@ -140,31 +147,19 @@ const Home = () => {
       <section className={styles.capSection}>
         <motion.h2 
           className={styles.sectionHeading}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          variants={fadeInVariant}
         >
-          What I Build
+          Capabilities
         </motion.h2>
         <div className={styles.capGrid}>
           {capabilityGrid.map((tile, i) => (
-            <motion.div 
-              key={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInVariant}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-            >
-              <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} glareEnable={true} glareMaxOpacity={0.1} glareColor="#4db6ac" glarePosition="all" className={styles.tiltWrapper}>
-                <div className={styles.capTile} data-cursor-pointer="true">
-                  <span className={styles.capIcon}>{tile.icon}</span>
-                  <h4 className={styles.capTitle}>{tile.title}</h4>
-                  <p className={styles.capTools}>{tile.tools}</p>
-                </div>
-              </Tilt>
-            </motion.div>
+            <div key={i} className={styles.capTile} data-cursor-pointer="true">
+              <span className={styles.capIcon}>{tile.icon}</span>
+              <h4 className={styles.capTitle}>{tile.title}</h4>
+              <p className={styles.capTools}>{tile.tools}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -173,59 +168,38 @@ const Home = () => {
       <section className={styles.processSection}>
         <motion.h2 
           className={styles.sectionHeading}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          variants={fadeInVariant}
         >
-          How I Work
+          Execution Process
         </motion.h2>
         <div className={styles.processGrid}>
           {howIWork.map((step, i) => (
-            <motion.div 
-              key={i} 
-              className={styles.processStep}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInVariant}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-            >
-              <span className={styles.stepNumber}>{step.step}</span>
+            <div key={i} className={styles.processStep}>
+              <span className={styles.stepNumber}>PHASE_{step.step}</span>
               <h4 className={styles.stepTitle}>{step.title}</h4>
               <p className={styles.stepDesc}>{step.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
 
       {/* 5 · Stack Strip */}
       <section className={styles.stackSection}>
-        <motion.div
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           viewport={{ once: true }}
-           transition={{ duration: 1 }}
-        >
-          <Marquee gradient={true} gradientColor="#0D1117" speed={40} className={styles.marqueeContainer}>
-            {stackStrip.map((tool, i) => (
-              <span key={i} className={styles.stackChip}>{tool}</span>
-            ))}
-            {/* Duplicate for smoother loop if stackStrip is short */}
-            {stackStrip.map((tool, i) => (
-              <span key={i + 100} className={styles.stackChip}>{tool}</span>
-            ))}
-          </Marquee>
-        </motion.div>
+        <Marquee gradient={false} speed={50}>
+          {stackStrip.map((tool, i) => (
+            <span key={i} className={styles.stackChip}>{tool}</span>
+          ))}
+        </Marquee>
       </section>
 
       {/* 6 · Collaboration CTA */}
       <section className={styles.collabSection}>
         <motion.div
-           initial="hidden"
-           whileInView="visible"
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
-           variants={fadeInVariant}
            transition={{ duration: 0.6 }}
         >
           <h2 className={styles.collabTitle}>{collaboration.title}</h2>

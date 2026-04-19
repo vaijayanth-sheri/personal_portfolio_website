@@ -13,13 +13,13 @@
 }
 
 .title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, #fff 0%, #cfd8dc 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
 }
 
 .subtitle {

@@ -69,11 +69,10 @@
 }
 
 .contactDetails {
-    background: rgba(168, 85, 247, 0.05);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    margin-bottom: 3rem;
+    background: var(--color-surface);
+    padding: 3rem;
+    border: 1px solid var(--color-border);
+    margin-bottom: 4rem;
 }
 
 .detailRow {
@@ -89,16 +88,16 @@
     justify-content: center;
     width: 48px;
     height: 48px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
     color: var(--color-accent);
     font-size: 1.4rem;
     flex-shrink: 0;
-    transition: all 0.3s ease;
+    transition: var(--transition-fast);
 }
 
 .detailRow:hover .iconWrapper {
-    background: rgba(168, 85, 247, 0.15);
+    border-color: var(--color-accent);
     transform: scale(1.05);
 }
 

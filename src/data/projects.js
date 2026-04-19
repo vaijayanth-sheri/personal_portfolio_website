@@ -1,6 +1,6 @@
-import solarAutoImg from '/media/solar auto layout/home.png';
-import solarAutoP1 from '/media/solar auto layout/page 1.png';
-import solarAutoP2 from '/media/solar auto layout/page 2.png';
+import solarAutoImg from '/media/Solar auto layout/home.png';
+import solarAutoP1 from '/media/Solar auto layout/page 1.png';
+import solarAutoP2 from '/media/Solar auto layout/page 2.png';
 import paccemImg from '/media/PACCEM/header.png';
 import gridawareImg from '/media/Projet_Gridaware/header.png';
 import resimImg from '/media/hybrid_digital_twin/header.png';

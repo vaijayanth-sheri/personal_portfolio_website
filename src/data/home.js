@@ -1,5 +1,5 @@
 import solarOps360Img from '/media/solarOps360/header.png';
-import solarAutoImg from '/media/solar auto layout/home.png';
+import solarAutoImg from '/media/Solar auto layout/home.png';
 import paccemImg from '/media/PACCEM/header.png';
 import gridawareImg from '/media/Projet_Gridaware/header.png';
 import resimImg from '/media/hybrid_digital_twin/header.png';

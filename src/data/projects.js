@@ -40,6 +40,13 @@ import workflowP2 from '/media/Jupyter Workflow manager/page 2.png';
 import plotHomeImg from '/media/Visual plot builder for Jupyter/home.png';
 import plotP1 from '/media/Visual plot builder for Jupyter/page 1.png';
 
+import appthamitraHome from '/media/AppthaMitra/Home.jpg';
+import appthamitraP1 from '/media/AppthaMitra/Page 1.png';
+import appthamitraP2 from '/media/AppthaMitra/page 2.png';
+
+import researchAgentHome from '/media/Automated Research Agent/Hone.png';
+
+
 
 export const projectsData = [
   {
@@ -243,10 +250,9 @@ export const projectsData = [
       '**Zero-Touch Logging**: Direct integration with Google Sheets for building databases progressively.',
       '**Cost-Effective Architecture**: Built entirely on robust free-tier APIs.'
     ],
-    heroImage: 'https://placehold.co/1200x600/3e2723/FFF?text=Automation+Workflow',
+    heroImage: researchAgentHome,
     gallery: [
-      'https://placehold.co/800x500/3e2723/FFF?text=Make.com+Pipeline',
-      'https://placehold.co/800x500/3e2723/FFF?text=Output+Sheet'
+      researchAgentHome
     ],
     links: { github: '#' },
   },
@@ -271,10 +277,10 @@ export const projectsData = [
       '**Knowledge Hub**: Community forum for agronomic tips and market prices.',
       '**Dual User Flows**: Distinct, optimized journeys for Producers (selling) and Consumers (buying).'
     ],
-    heroImage: 'https://placehold.co/1200x600/558b2f/FFF?text=AppthaMitra+UX',
+    heroImage: appthamitraHome,
     gallery: [
-      'https://placehold.co/800x500/558b2f/FFF?text=User+Flow+Map',
-      'https://placehold.co/800x500/558b2f/FFF?text=Mobile+Screens'
+      appthamitraP1,
+      appthamitraP2
     ],
     links: { demo: 'https://www.behance.net/vaijayanth_sheri' },
   },

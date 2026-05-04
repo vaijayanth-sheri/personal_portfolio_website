@@ -72,7 +72,10 @@ export const projectsData = [
     ],
     heroImage: solarAutoImg,
     gallery: [solarAutoP1, solarAutoP2],
-    links: { github: 'https://github.com/vaijayanth-sheri/Solar_AutoLayout' }, // Assuming name from context
+    links: { 
+      demo: 'https://solar-auto-layout-pdnoenf7l-sherivaijayanth-9859s-projects.vercel.app/',
+      github: 'https://github.com/vaijayanth-sheri/Solar_AutoLayout' 
+    },
   },
   {
     id: 'paccem',

@@ -40,8 +40,16 @@ const Home = () => {
             </div>
           </div>
           <div className={styles.heroText}>
-            <h1 className={styles.name}>{hero.name}</h1>
-            <h2 className={styles.title}>{hero.title}</h2>
+            <h1 className={styles.name}>
+              {hero.name.split(' ')[0]} <span className={styles.highlightName}>{hero.name.split(' ').slice(1).join(' ')}</span>
+            </h1>
+            <h2 className={styles.title}>
+              {hero.title.split('|').map((tag, index, arr) => (
+                <span key={index} style={{ display: 'block', marginBottom: '0.3rem' }}>
+                  {tag.trim()}{index < arr.length - 1 ? ' |' : ''}
+                </span>
+              ))}
+            </h2>
             <p className={styles.subheadline}>{hero.subheadline}</p>
             <div className={styles.heroCtas}>
               <Link to={hero.ctaPrimary.to} className={styles.btnPrimary} data-cursor-pointer="true">{hero.ctaPrimary.label}</Link>

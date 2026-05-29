@@ -10,8 +10,8 @@ import plotHomeImg from '/media/Visual plot builder for Jupyter/home.png';
 export const homeData = {
     hero: {
         name: "Vaijayanth Sheri",
-        title: "Energy Systems Engineer & Digital Product Builder",
-        subheadline: "I design and ship platforms that wrap energy models into usable decision tools — configuration-driven, reproducible, built for technical users.",
+        title: "Energy Systems Engineer | Utility Data & Infrastructure Analytics | Energy Modelling",
+        subheadline: "I work at the intersection of electricity network data, energy system modelling, and decision-support tools. My focus is building reliable data foundations and modelling workflows that support infrastructure planning, asset management, and energy transition decisions.",
         ctaPrimary: { label: "View Projects", to: "/projects" },
         ctaSecondary: { label: "Get in Touch", to: "/contact" },
     },
@@ -97,14 +97,10 @@ export const homeData = {
     ],
 
     capabilityGrid: [
-        { icon: "⚡", title: "Energy Modeling", tools: "PyPSA · Capacity Expansion · Scenario Design" },
-        { icon: "☀", title: "Renewables Simulation", tools: "PVLib · Windpowerlib · Yield Analysis" },
-        { icon: "🗄", title: "Data Engineering", tools: "PostgreSQL · ETL · Schema Logic · Pandas" },
-        { icon: "🔁", title: "Reproducible Pipelines", tools: "Config-Driven · NetCDF · YAML · Version Pinning" },
-        { icon: "📊", title: "Decision UX", tools: "Dashboards · Cognitive Load · Decision Clarity" },
-        { icon: "🖥", title: "UI Tooling", tools: "Streamlit · PyQt · Technical Workflows" },
-        { icon: "🗺", title: "Geospatial", tools: "Geopandas · Folium · Location Analysis" },
-        { icon: "📋", title: "Reporting", tools: "Automated Reports · PDF Generation · Audit Trails" },
+        { icon: "🗄", title: "Infrastructure Data & Analytics" },
+        { icon: "⚡", title: "Energy Systems Modelling" },
+        { icon: "🖥", title: "Software & Tool Development" },
+        { icon: "📊", title: "Energy Planning & Decision Support" },
     ],
 
     howIWork: [
@@ -115,14 +111,14 @@ export const homeData = {
     ],
 
     stackStrip: [
-        "PyPSA", "PVLib", "Windpowerlib", "Demandlib", "linopy",
-        "xarray", "geopandas", "PostgreSQL", "Streamlit", "PyQt",
-        "Pandas", "Plotly", "NetCDF", "YAML",
+        "PostgreSQL", "SQL", "PyPSA", "OEMOF", "PVLib", "Windpowerlib",
+        "DemandLib", "Python", "Streamlit", "Dash", "PyQt5",
+        "Plotly", "Pandas", "NumPy", "Folium", "OpenStreetMap"
     ],
 
     collaboration: {
         title: "Ways We Can Collaborate",
-        description: "I build platforms for energy modeling, simulation, and decision support. If you have a technically meaningful problem in the energy sector — from capacity planning to data pipeline automation — I am ready to work on it.",
+        description: "I am open to full-time opportunities and selected collaborations involving energy system modelling, utility analytics, infrastructure data engineering, and decision-support platforms.",
         ctaLabel: "Start a Conversation",
         ctaTo: "/contact",
     },

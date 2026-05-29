@@ -8,7 +8,7 @@ const CapabilityCard = ({ capability }) => {
   return (
     <article className={styles.card}>
       <div className={styles.header}>
-        <span className={styles.icon}>{getIcon(icon)}</span>
+        <span className={styles.icon}>{getIcon(icon) || icon}</span>
         <h3 className={styles.title}>{title}</h3>
       </div>
       <p className={styles.summary}>{summary}</p>

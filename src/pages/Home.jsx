@@ -3,6 +3,7 @@ import { homeData } from '../data/home';
 import styles from './Home.module.css';
 import { Link } from 'react-router-dom';
 import profilePhoto from '/media/Profile_Sheri.jpg';
+import jobTrackerImg from '/media/Job application tracker/homepage.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
@@ -24,10 +25,10 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-      
+
       {/* 1 · Hero */}
       <section className={styles.heroSection}>
-        <motion.div 
+        <motion.div
           className={styles.heroInner}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -50,13 +51,46 @@ const Home = () => {
         </motion.div>
       </section>
 
+      {/* 1.5 · JobTracker Featured Tool */}
+      <section className={styles.jobTrackerSection}>
+        <motion.div
+          className={styles.jobTrackerContainer}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className={styles.jobTrackerInfo}>
+            <span className={styles.jobTrackerTagline}>To help Job seekers</span>
+            <h2 className={styles.jobTrackerTitle}>JobTracker</h2>
+            <p className={styles.jobTrackerDesc}>
+              A lightweight, fast, and intuitive web application to track job applications, job boards, and skill gaps. Designed for high performance with a smart auto-complete engine and secure data isolation via Supabase RLS.
+            </p>
+            <div className={styles.jobTrackerTech}>
+              <span>Next.js 14</span>
+              <span>Supabase</span>
+              <span>Tailwind CSS</span>
+              <span>TypeScript</span>
+            </div>
+            <div className={styles.jobTrackerActions}>
+              <a href="https://job-application-tracker-tan-seven.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" className={styles.btnPrimaryGlow} data-cursor-pointer="true">
+                Try now
+              </a>
+            </div>
+          </div>
+          <div className={styles.jobTrackerVisual}>
+            <img src={jobTrackerImg} alt="JobTracker Interface" />
+          </div>
+        </motion.div>
+      </section>
+
       {/* 2 · Selected Work */}
       <section className={styles.selectedWorkSection}>
         <motion.div
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           viewport={{ once: true, margin: "-100px" }}
-           transition={{ duration: 0.8 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
         >
           <h2 className={styles.sectionHeading}>Featured Projects</h2>
           <div className={styles.swiperWrapper}>
@@ -113,16 +147,16 @@ const Home = () => {
       {/* 2.5 · The Lab (Ongoing) */}
       <section className={styles.labSection}>
         <motion.div
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.8 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
           <div className={styles.labHeader}>
             <h2 className={styles.sectionHeading}>The Lab</h2>
             <p className={styles.sectionSub}>Active Research & Development // Ongoing Systems</p>
           </div>
-          
+
           <div className={styles.labGrid}>
             {homeData.labProjects.map((project) => (
               <article key={project.id} className={styles.labCard} data-id={project.id.toUpperCase()} data-cursor-pointer="true">
@@ -145,7 +179,7 @@ const Home = () => {
 
       {/* 3 · Capability Grid */}
       <section className={styles.capSection}>
-        <motion.h2 
+        <motion.h2
           className={styles.sectionHeading}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -166,7 +200,7 @@ const Home = () => {
 
       {/* 4 · How I Work */}
       <section className={styles.processSection}>
-        <motion.h2 
+        <motion.h2
           className={styles.sectionHeading}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -197,10 +231,10 @@ const Home = () => {
       {/* 6 · Collaboration CTA */}
       <section className={styles.collabSection}>
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
           <h2 className={styles.collabTitle}>{collaboration.title}</h2>
           <p className={styles.collabText}>{collaboration.description}</p>

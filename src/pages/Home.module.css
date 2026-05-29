@@ -580,3 +580,163 @@
   color: var(--color-secondary);
   line-height: 1.6;
 }
+
+/* ── Custom: JobTracker Feature ───────────────────────── */
+.jobTrackerSection {
+  padding: 5rem 0;
+  margin: 2rem 0 6rem 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow effect behind the container */
+.jobTrackerSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(204,255,0,0.03) 0%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
+}
+
+.jobTrackerContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.jobTrackerInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.jobTrackerTagline {
+  font-family: var(--font-family-mono);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.jobTrackerTagline::before {
+  content: "✦";
+  font-size: 0.9rem;
+}
+
+.jobTrackerTitle {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.jobTrackerDesc {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.jobTrackerTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.jobTrackerTech span {
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  padding: 0.3rem 0.6rem;
+  background: var(--color-background);
+}
+
+.jobTrackerActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btnPrimaryGlow {
+  padding: 1rem 2rem;
+  background: var(--color-accent);
+  color: #000;
+  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(204, 255, 0, 0.2);
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnPrimaryGlow:hover {
+  box-shadow: 0 0 30px rgba(204, 255, 0, 0.4);
+  transform: translateY(-2px);
+  background: var(--color-accent-hover);
+}
+
+.jobTrackerVisual {
+  position: relative;
+  border: 1px solid var(--color-border);
+  background: #000;
+  border-radius: 8px; /* Slightly softer for a tool */
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.jobTrackerVisual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.8;
+  transition: var(--transition-slow);
+}
+
+.jobTrackerVisual:hover img {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+  .jobTrackerContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .jobTrackerTagline {
+    justify-content: center;
+  }
+  
+  .jobTrackerTech {
+    justify-content: center;
+  }
+  
+  .jobTrackerActions {
+    justify-content: center;
+  }
+}

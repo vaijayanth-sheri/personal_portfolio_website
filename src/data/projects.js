@@ -1,3 +1,7 @@
+import jobTrackerHome from '/media/Job application tracker/homepage.png';
+import jobTrackerP1 from '/media/Job application tracker/page 1.png';
+import jobTrackerP2 from '/media/Job application tracker/page 2.png';
+
 import solarAutoImg from '/media/Solar auto layout/home.png';
 import solarAutoP1 from '/media/Solar auto layout/page 1.png';
 import solarAutoP2 from '/media/Solar auto layout/page 2.png';
@@ -49,6 +53,36 @@ import researchAgentHome from '/media/Automated Research Agent/Hone.png';
 
 
 export const projectsData = [
+  {
+    id: 'job-tracker',
+    title: 'JobTracker — Application System',
+    role: 'Full-Stack Developer',
+    duration: '2026',
+    summary: 'A lightweight, fast, and intuitive web application to track job applications, job boards, and skill gaps. Built with Next.js 14, Supabase, and Tailwind CSS.',
+    impact: 'Optimized data entry and tracking through smart auto-complete suggestions and a modular architecture.',
+    tech: ['Next.js 14', 'Supabase', 'Tailwind CSS', 'TypeScript'],
+    techStackDetailed: {
+      'Frontend': 'Next.js 14 (App Router), React, Tailwind CSS 3',
+      'Backend': 'Supabase (PostgreSQL), Supabase Auth',
+      'Security': 'Row-Level Security (RLS)',
+      'Language': 'TypeScript 5'
+    },
+    overview: 'JobTracker is a comprehensive platform designed for individuals navigating the job market. It acts as a central hub for tracking applications, managing company contacts, organizing job boards, and identifying skill gaps. By leveraging a modern tech stack like Next.js 14 and Supabase, it provides a fast, secure, and responsive experience natively on both desktop and mobile devices.',
+    features: [
+      '**Smart Suggestions Engine**: Auto-complete dropdowns automatically derive previous entries to speed up data entry without heavy database reads.',
+      '**Comprehensive Dashboard**: Stats overview with total, applied, interview, rejected, and offers counts, featuring advanced filtering.',
+      '**Robust Security**: Built-in Email/Password authentication via Supabase Auth with strict Row-Level Security ensuring private data isolation per user.',
+      '**Optimized Database Architecture**: Utilizes strict VARCHAR types, smart index targeting, and automatic timestamps for high performance.'
+    ],
+    heroImage: jobTrackerHome,
+    gallery: [
+      jobTrackerP1,
+      jobTrackerP2
+    ],
+    links: { 
+      demo: 'https://job-application-tracker-tan-seven.vercel.app/dashboard'
+    },
+  },
   {
     id: 'solar-autolayout',
     title: 'Solar AutoLayout & Energy Estimation',

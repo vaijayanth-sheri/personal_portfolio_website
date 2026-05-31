@@ -1,6 +1,8 @@
 import jobTrackerHome from '/media/Job application tracker/homepage.png';
 import jobTrackerP1 from '/media/Job application tracker/page 1.png';
 import jobTrackerP2 from '/media/Job application tracker/page 2.png';
+import jobTrackerP3 from '/media/Job application tracker/page 3.png';
+import jobTrackerP4 from '/media/Job application tracker/page 4.png';
 
 import solarAutoImg from '/media/Solar auto layout/home.png';
 import solarAutoP1 from '/media/Solar auto layout/page 1.png';
@@ -58,26 +60,30 @@ export const projectsData = [
     title: 'JobTracker — Application System',
     role: 'Full-Stack Developer',
     duration: '2026',
-    summary: 'A lightweight, fast, and intuitive web application to track job applications, job boards, and skill gaps. Built with Next.js 14, Supabase, and Tailwind CSS.',
-    impact: 'Optimized data entry and tracking through smart auto-complete suggestions and a modular architecture.',
-    tech: ['Next.js 14', 'Supabase', 'Tailwind CSS', 'TypeScript'],
+    summary: 'An AI-powered platform for navigating the job market, featuring a smart RAG engine for tailored applications and intelligent data extraction.',
+    impact: 'Optimized the job search workflow by reducing manual data entry and significantly cutting down the time spent tailoring applications through intelligent AI extraction.',
+    tech: ['Next.js 14', 'Supabase', 'Gemini AI', 'Tailwind CSS'],
     techStackDetailed: {
       'Frontend': 'Next.js 14 (App Router), React, Tailwind CSS 3',
       'Backend': 'Supabase (PostgreSQL), Supabase Auth',
+      'AI Integration': 'Vercel AI SDK, Google Gemini 2.5 Flash',
       'Security': 'Row-Level Security (RLS)',
       'Language': 'TypeScript 5'
     },
-    overview: 'JobTracker is a comprehensive platform designed for individuals navigating the job market. It acts as a central hub for tracking applications, managing company contacts, organizing job boards, and identifying skill gaps. By leveraging a modern tech stack like Next.js 14 and Supabase, it provides a fast, secure, and responsive experience natively on both desktop and mobile devices.',
+    overview: 'JobTracker is a comprehensive, AI-powered platform designed for individuals navigating the job market. It acts as a central hub for tracking applications, managing company contacts, organizing job boards, and identifying skill gaps. By leveraging a modern tech stack like Next.js 14, Supabase, and Gemini AI, it provides a fast, secure, and intelligent experience that drastically reduces the friction of tailoring applications and managing data natively on both desktop and mobile devices.',
     features: [
-      '**Smart Suggestions Engine**: Auto-complete dropdowns automatically derive previous entries to speed up data entry without heavy database reads.',
+      '**AI Application Workshop (RAG System)**: An advanced Retrieval-Augmented Generation engine that queries a modular Candidate Database to automatically generate highly tailored CV bullets and cover letters.',
+      '**Smart Data Extraction**: Streamlines tracking by allowing users to paste a job description. The AI instantly extracts key details and scores the role\'s relevancy against the user\'s profile.',
+      '**Smart Suggestions Engine**: Auto-complete dropdowns automatically derive previous entries to speed up data entry.',
       '**Comprehensive Dashboard**: Stats overview with total, applied, interview, rejected, and offers counts, featuring advanced filtering.',
-      '**Robust Security**: Built-in Email/Password authentication via Supabase Auth with strict Row-Level Security ensuring private data isolation per user.',
-      '**Optimized Database Architecture**: Utilizes strict VARCHAR types, smart index targeting, and automatic timestamps for high performance.'
+      '**Robust Security**: Built-in Email/Password authentication via Supabase Auth with strict Row-Level Security ensuring private data isolation.'
     ],
     heroImage: jobTrackerHome,
     gallery: [
       jobTrackerP1,
-      jobTrackerP2
+      jobTrackerP2,
+      jobTrackerP3,
+      jobTrackerP4
     ],
     links: { 
       demo: 'https://job-application-tracker-tan-seven.vercel.app/dashboard'

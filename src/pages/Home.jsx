@@ -1,7 +1,7 @@
 import React from 'react';
 import { homeData } from '../data/home';
 import styles from './Home.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import profilePhoto from '/media/Profile_Sheri.jpg';
 import jobTrackerImg from '/media/Job application tracker/homepage.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -17,6 +17,7 @@ import Tilt from 'react-parallax-tilt';
 
 const Home = () => {
   const { hero, selectedWork, capabilityGrid, howIWork, stackStrip, collaboration } = homeData;
+  const navigate = useNavigate();
 
   const fadeInVariant = {
     hidden: { opacity: 0, y: 30 },
@@ -67,21 +68,23 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
+          onClick={() => navigate('/projects/job-tracker')}
+          style={{ cursor: 'pointer' }}
         >
           <div className={styles.jobTrackerInfo}>
             <span className={styles.jobTrackerTagline}>To help Job seekers</span>
             <h2 className={styles.jobTrackerTitle}>JobTracker</h2>
             <p className={styles.jobTrackerDesc}>
-              A lightweight, fast, and intuitive web application to track job applications, job boards, and skill gaps. Designed for high performance with a smart auto-complete engine and secure data isolation via Supabase RLS.
+              An AI-powered platform designed to streamline your job search. Track applications, organize contacts, and instantly generate tailored CV bullets and cover letters using an advanced Retrieval-Augmented Generation (RAG) engine powered by Gemini AI.
             </p>
             <div className={styles.jobTrackerTech}>
               <span>Next.js 14</span>
               <span>Supabase</span>
+              <span>Gemini 2.5 Flash</span>
               <span>Tailwind CSS</span>
-              <span>TypeScript</span>
             </div>
             <div className={styles.jobTrackerActions}>
-              <a href="https://job-application-tracker-tan-seven.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" className={styles.btnPrimaryGlow} data-cursor-pointer="true">
+              <a href="https://job-application-tracker-tan-seven.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" className={styles.btnPrimaryGlow} data-cursor-pointer="true" onClick={(e) => e.stopPropagation()}>
                 Try now
               </a>
             </div>
@@ -117,7 +120,7 @@ const Home = () => {
             >
               {selectedWork.map((project) => (
                 <SwiperSlide key={project.id} className={styles.swiperSlide}>
-                  <article className={styles.projectCard} data-id={project.id.toUpperCase()} data-cursor-pointer="true">
+                  <article className={styles.projectCard} data-id={project.id.toUpperCase()} data-cursor-pointer="true" onClick={() => navigate(`/projects/${project.id}`)} style={{ cursor: 'pointer' }}>
                     <div className={styles.projectScreenshot}>
                       {project.screenshot && project.screenshot.includes('[TODO') ? (
                         <span className={styles.screenshotPlaceholder}>{project.screenshot}</span>
@@ -137,8 +140,8 @@ const Home = () => {
                         <li><strong>The Outcome</strong> {project.output}</li>
                       </ul>
                       <div className={styles.projectLinks}>
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true">Execute Demo</a>
-                        <a href={project.repo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true">Source Code</a>
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true" onClick={(e) => e.stopPropagation()}>Execute Demo</a>
+                        <a href={project.repo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true" onClick={(e) => e.stopPropagation()}>Source Code</a>
                       </div>
                     </div>
                   </article>
@@ -167,7 +170,7 @@ const Home = () => {
 
           <div className={styles.labGrid}>
             {homeData.labProjects.map((project) => (
-              <article key={project.id} className={styles.labCard} data-id={project.id.toUpperCase()} data-cursor-pointer="true">
+              <article key={project.id} className={styles.labCard} data-id={project.id.toUpperCase()} data-cursor-pointer="true" onClick={() => navigate(`/projects/${project.id}`)} style={{ cursor: 'pointer' }}>
                 <div className={styles.labScreenshot}>
                   <img src={project.screenshot} alt={project.name} />
                   <div className={styles.labOverlay}>

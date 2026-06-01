@@ -1,60 +1,11 @@
-import jobTrackerHome from '/media/Job application tracker/homepage.png';
-import jobTrackerP1 from '/media/Job application tracker/page 1.png';
-import jobTrackerP2 from '/media/Job application tracker/page 2.png';
-import jobTrackerP3 from '/media/Job application tracker/page 3.png';
-import jobTrackerP4 from '/media/Job application tracker/page 4.png';
+import re
 
-import solarAutoImg from '/media/Solar auto layout/home.png';
-import solarAutoP1 from '/media/Solar auto layout/page 1.png';
-import solarAutoP2 from '/media/Solar auto layout/page 2.png';
-import paccemImg from '/media/PACCEM/header.png';
-import gridawareImg from '/media/Projet_Gridaware/header.png';
-import resimImg from '/media/hybrid_digital_twin/header.png';
+filepath = r"c:\Users\SHERI VAIJAYANTH\Desktop\Projects\Website\personal_portfolio_website\src\data\projects.js"
 
-import paccemPage1 from '/media/PACCEM/page-1.png';
-import paccemPage2 from '/media/PACCEM/page-2.png';
+with open(filepath, "r", encoding="utf-8") as f:
+    content = f.read()
 
-import gridawarePage1 from '/media/Projet_Gridaware/page-1.png';
-import gridawarePage2 from '/media/Projet_Gridaware/page-2.png';
-import gridawarePage3 from '/media/Projet_Gridaware/page-3.png';
-
-import resimPage1 from '/media/hybrid_digital_twin/page-1.png';
-import resimPage2 from '/media/hybrid_digital_twin/page-2.png';
-
-import pvInvestImg from '/media/EV_feasibility_calculator/header.png';
-import pvInvestPage1 from '/media/EV_feasibility_calculator/page-1.png';
-import pvInvestPage2 from '/media/EV_feasibility_calculator/page-2.png';
-
-import solarEvImg from '/media/solar_EV_configurator/header.png';
-
-import pypsaGenImg from '/media/pypsa_code_generator/header.png';
-import pypsaGenPage1 from '/media/pypsa_code_generator/page-1.png';
-import pypsaGenPage2 from '/media/pypsa_code_generator/page-2.png';
-
-import pvlibGuiImg from '/media/PVLib_GUI/header.png';
-import pvlibGuiPage1 from '/media/PVLib_GUI/page-1.png';
-import pvlibGuiPage2 from '/media/PVLib_GUI/page-2.png';
-
-import windLibGuiImg from '/media/WindLib_GUI/header.png';
-import windLibGuiPage1 from '/media/WindLib_GUI/page-1.png';
-import windLibGuiPage2 from '/media/WindLib_GUI/page-2.png';
-
-import workflowHomeImg from '/media/Jupyter Workflow manager/home.png';
-import workflowP1 from '/media/Jupyter Workflow manager/page 1.png';
-import workflowP2 from '/media/Jupyter Workflow manager/page 2.png';
-
-import plotHomeImg from '/media/Visual plot builder for Jupyter/home.png';
-import plotP1 from '/media/Visual plot builder for Jupyter/page 1.png';
-
-import appthamitraHome from '/media/AppthaMitra/Home.jpg';
-import appthamitraP1 from '/media/AppthaMitra/Page 1.png';
-import appthamitraP2 from '/media/AppthaMitra/page 2.png';
-
-import researchAgentHome from '/media/Automated Research Agent/Hone.png';
-
-
-
-export const projectsData = [
+new_projects_data = """export const projectsData = [
   {
     id: 'job-tracker',
     title: 'JobTracker & AI Career Assistant',
@@ -72,7 +23,7 @@ export const projectsData = [
     overview: 'JobTracker is a comprehensive career CRM designed to minimize the friction of managing complex application lifecycles. Built on a highly responsive Next.js and Supabase architecture, it provides a centralized dashboard for tracking applications, identifying skill gaps, and managing company research. Its standout innovation is an integrated "AI Workshop" that transforms relational candidate data into structured XML prompts, enabling Google Gemini to generate perfectly tailored, strictly evidence-based cover letters and resume bullets.',
     features: [
       '**AI Application Workshop (RAG System)**: Dynamically injects structured PostgreSQL candidate data into an XML context window, instructing the LLM to generate highly tailored, hallucination-free application materials.',
-      '**Smart Job Parsing**: Automatically parses raw job descriptions via Gemini API to extract key metadata and score the role\'s relevancy against the user profile.',
+      '**Smart Job Parsing**: Automatically parses raw job descriptions via Gemini API to extract key metadata and score the role\\'s relevancy against the user profile.',
       '**Comprehensive Career Dashboard**: Real-time statistics overview with intuitive filtering, inline editing, and automated tracking of technical skill gaps.',
       '**Robust Security & Architecture**: Secure database operations managed by strict Row-Level Security (RLS) policies, handling complex schema migrations and relational junction tables.'
     ],
@@ -160,7 +111,7 @@ export const projectsData = [
     overview: 'As dynamic electricity tariffs become standard, GridAware helps consumers navigate market volatility. This application integrates live day-ahead pricing from the Awattar Germany API. Behind the scenes, a Pandas-driven rolling-sum optimization algorithm processes user-specific EV parameters (battery capacity, target SoC, efficiency) to identify the absolute cheapest continuous charging window, immediately translating complex market signals into tangible consumer savings.',
     features: [
       '**Live Market Optimization**: Real-time integration with the Awattar DE API to fetch and visualize hourly electricity market rates.',
-      '**Smart Recommendation Engine**: Rolling-window Pandas algorithm calculates the single cheapest continuous charging block tailored to the vehicle\'s limits.',
+      '**Smart Recommendation Engine**: Rolling-window Pandas algorithm calculates the single cheapest continuous charging block tailored to the vehicle\\'s limits.',
       '**Interactive Visual Overlay**: Intuitive Plotly charts dynamically highlight actionable charging windows against price spikes.',
       '**Resilient Architecture**: Built-in network error handling and JSON caching to ensure high availability even during external API outages.'
     ],
@@ -434,7 +385,7 @@ export const projectsData = [
     features: [
       '**File-Scoped Micro-Versioning**: Links active Python scripts to isolated logic graphs, tracking multiple algorithmic versions per step.',
       '**Smart Text Replacement**: Programmatically interfaces with the VS Code document API to safely insert or swap code blocks without polluting the workspace.',
-      '**Native Diff Visualization**: Stages temporary files to leverage VS Code\'s powerful native diff engine for immediate side-by-side algorithmic comparisons.',
+      '**Native Diff Visualization**: Stages temporary files to leverage VS Code\\'s powerful native diff engine for immediate side-by-side algorithmic comparisons.',
       '**Automated Pipeline Compilation**: Generates clean, production-ready Python deliverables by compiling the active versions of all steps with a single click.'
     ],
     heroImage: workflowHomeImg,
@@ -604,7 +555,7 @@ export const projectsData = [
       'Visualization Engines': 'Matplotlib, Seaborn, Plotly',
       'Architecture': 'Model-View-Controller (MVC), Adapter Pattern'
     },
-    overview: 'AutoPlot eliminates the boilerplate associated with basic Exploratory Data Analysis. It provides a stateful GUI where users upload data and seamlessly map variables to 6 different chart types. By architecting an Adapter pattern and leveraging PyQt\'s QStackedWidget, the application effortlessly hot-swaps between rendering static Matplotlib canvases and embedded Chromium web views for interactive Plotly graphs, delivering extreme flexibility for data professionals.',
+    overview: 'AutoPlot eliminates the boilerplate associated with basic Exploratory Data Analysis. It provides a stateful GUI where users upload data and seamlessly map variables to 6 different chart types. By architecting an Adapter pattern and leveraging PyQt\\'s QStackedWidget, the application effortlessly hot-swaps between rendering static Matplotlib canvases and embedded Chromium web views for interactive Plotly graphs, delivering extreme flexibility for data professionals.',
     features: [
       '**Dynamic Schema Inference**: Custom Pandas data ingestion layer that automatically categorizes columns and prevents invalid visual axis mappings.',
       '**Multi-Engine Visualization**: Seamlessly switches between static rendering (Matplotlib/Seaborn) and highly interactive web components (Plotly).',
@@ -615,4 +566,11 @@ export const projectsData = [
     gallery: [],
     links: {}
   }
-];
+];"""
+
+content = re.sub(r'export const projectsData = \[.*', new_projects_data, content, flags=re.DOTALL)
+
+with open(filepath, "w", encoding="utf-8") as f:
+    f.write(content)
+
+print("Done")

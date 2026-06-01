@@ -5,25 +5,25 @@ import solarOps360P2 from '/media/solarOps360/page-2.png';
 export const labData = [
   {
     id: 'solar-ops-360',
-    title: 'SolarOps360',
+    title: 'SolarOps360: Unified Solar Planning Platform',
     status: 'In Development',
-    role: 'Product Architect | Full-Stack Developer',
+    role: 'Product Architect & Lead Developer',
     duration: 'Ongoing',
-    oneLiner: 'Integrated solar plant monitoring & planning platform.',
-    impact: 'Building a unified digital twin foundation for the next generation of solar plant lifecycle management.',
-    tech: ['React', 'Supabase', 'PVLib', 'Python'],
+    oneLiner: 'A modular, unified digital twin blueprint for end-to-end solar PV project lifecycle management.',
+    impact: 'Consolidates highly siloed solar engineering workflows—feasibility, energy modeling, finance, and live IoT monitoring—into a cohesive digital twin platform.',
+    tech: ['Python', 'Streamlit', 'Dash', 'PVLib', 'Modbus'],
     techStackDetailed: {
-      'Frontend': 'React-based Dashboard',
-      'Backend': 'Supabase (PostgreSQL, Auth, Edge Functions)',
-      'Modeling': 'PVLib (planned), Time-series processing',
-      'Finance': 'LCOE, IRR, Payback modeling'
+      'Frontend': 'Modular Python (Streamlit & Dash Prototypes)',
+      'Backend Logic': 'PVLib (Simulation), Custom Financial & Loss Models',
+      'Data Integration': 'PVGIS, Open-Meteo, SCADA/IoT (pyModbusTCP)',
+      'Architecture': 'Decoupled UI & Logic, Centralized Configuration Registries'
     },
-    overview: 'SolarOps360 represents an ongoing effort to build a next-generation solar planning and monitoring platform. Designed as a lightweight, accessible alternative to complex commercial tools, it combines engineering rigor with a modern, user-centric interface. The platform supports the entire lifecycle from end-to-end management to time-series performance tracking.',
+    overview: 'SolarOps360 is an ambitious architectural blueprint and functional prototype designed to serve as a "single pane of glass" for solar project lifecycle management. Recognizing the heavy fragmentation in the renewable sector, this platform unifies site feasibility mapping, high-fidelity energy modeling, complex financial payback calculations, and real-time SCADA monitoring. The application is strictly modular, separating business logic from UI, enabling a scalable pathway to enterprise-grade asset management.',
     features: [
-      '**Plant Configuration Engine**: Expert-level inputs for modules, inverters, and loss factors.',
-      '**Weather Integration**: Planned connectivity with PVGIS and Open-Meteo for high-res irradiance data.',
-      '**Energy Simulation**: High-fidelity modeling of performance ratios and specific yields.',
-      '**Financial Analytics**: Integrated CAPEX/OPEX modeling with bankability metrics like LCOE and IRR.'
+      '**Modular System Architecture**: Configured 14 distinct engineering modules, seamlessly decoupling UI logic from core solar physics and financial algorithms.',
+      '**Advanced Yield & Financial Engine**: Integrates PVLib and PVGIS to model performance ratios, degradation, and LCOE/ROI metrics across a 25-year lifecycle.',
+      '**IoT & SCADA Integration**: Architected real-time data pipelines to ingest Modbus/MQTT telemetry for predictive maintenance and fault detection.',
+      '**End-to-End Product Ownership**: Guided by a comprehensive Product Requirements Document (PRD), bridging hard power system domain knowledge with full-stack software design.'
     ],
     heroImage: solarOps360Img,
     gallery: [solarOps360P1, solarOps360P2],

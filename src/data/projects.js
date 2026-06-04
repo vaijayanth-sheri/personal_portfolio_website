@@ -52,7 +52,11 @@ import appthamitraP2 from '/media/AppthaMitra/page 2.png';
 
 import researchAgentHome from '/media/Automated Research Agent/Hone.png';
 
+import pypsaResultsHeader from '/media/PyPSA_results_dashboard/header.png';
+import pypsaResultsP1 from '/media/PyPSA_results_dashboard/page-1.png';
+import pypsaResultsP2 from '/media/PyPSA_results_dashboard/page-2.png';
 
+import gridExplorerHome from '/media/Open energy grid explorer/homepage.png';
 
 export const projectsData = [
   {
@@ -60,21 +64,21 @@ export const projectsData = [
     title: 'JobTracker & AI Career Assistant',
     role: 'Full-Stack Developer',
     duration: '2026',
-    summary: 'An AI-augmented Next.js platform replacing scattered spreadsheets with a structured career CRM, featuring automated JD parsing and RAG-based document generation.',
-    impact: 'Optimized job application workflows by reducing data entry to under 5 seconds and automating the creation of highly tailored, evidence-backed resumes.',
+    summary: 'A comprehensive, full-stack web application designed to optimize the job search process through centralized data management and AI-driven document generation.',
+    impact: 'Saves hours of manual tracking and document formatting, providing actionable insights into the application funnel while centralizing professional identity management.',
     tech: ['Next.js 14', 'Supabase', 'Gemini AI', 'Tailwind CSS'],
     techStackDetailed: {
-      'Frontend': 'Next.js 14 (App Router), React, Tailwind CSS 3',
+      'Frontend': 'Next.js 14 (App Router), React, Tailwind CSS',
       'Backend': 'Supabase (PostgreSQL), Supabase Auth',
-      'AI Integration': 'Vercel AI SDK, Google Gemini 2.5 Flash',
-      'Architecture': 'Row-Level Security (RLS), Structured RAG Context Assembly'
+      'AI Integration': 'Google Gemini 2.5 Flash',
+      'Architecture': 'Row-Level Security (RLS)'
     },
-    overview: 'JobTracker is a comprehensive career CRM designed to minimize the friction of managing complex application lifecycles. Built on a highly responsive Next.js and Supabase architecture, it provides a centralized dashboard for tracking applications, identifying skill gaps, and managing company research. Its standout innovation is an integrated "AI Workshop" that transforms relational candidate data into structured XML prompts, enabling Google Gemini to generate perfectly tailored, strictly evidence-based cover letters and resume bullets.',
+    overview: 'JobTracker is a comprehensive career management platform designed to solve the chaos of the modern job hunt. Instead of relying on scattered spreadsheets and manual document editing, it provides a unified ecosystem to track applications, manage global directories of companies and job boards, and monitor personal skill gaps. A sophisticated database architecture securely manages both globally shared data and strictly private user data via PostgreSQL Row-Level Security (RLS).',
     features: [
-      '**AI Application Workshop (RAG System)**: Dynamically injects structured PostgreSQL candidate data into an XML context window, instructing the LLM to generate highly tailored, hallucination-free application materials.',
-      '**Smart Job Parsing**: Automatically parses raw job descriptions via Gemini API to extract key metadata and score the role\'s relevancy against the user profile.',
-      '**Comprehensive Career Dashboard**: Real-time statistics overview with intuitive filtering, inline editing, and automated tracking of technical skill gaps.',
-      '**Robust Security & Architecture**: Secure database operations managed by strict Row-Level Security (RLS) policies, handling complex schema migrations and relational junction tables.'
+      '**Candidate Profile Database**: Centralized repository for Experience, Projects, Education, and Skills, feeding directly into AI generation.',
+      '**Global vs Private Data Separation**: Scalable PostgreSQL architecture using Row-Level Security to securely manage global job boards and private user notes.',
+      '**AI Workshop**: Automated generation of tailored cover letters and CVs using structured profile data to reduce application preparation time.',
+      '**Analytics & Skill Gap Tracking**: Dynamic dashboards providing visual insights into application funnels, success rates, and missing required skills.'
     ],
     heroImage: jobTrackerHome,
     gallery: [
@@ -356,7 +360,7 @@ export const projectsData = [
   },
   {
     id: 'pvlib-gui',
-    title: 'Anywhere PV Data Generator (APDG)',
+    title: 'PVlib data generator',
     role: 'Open Source Developer',
     duration: '2024',
     summary: 'An open-source modeling engine built with Streamlit and pvlib that democratizes access to bankable solar production time-series globally.',
@@ -387,7 +391,7 @@ export const projectsData = [
   },
   {
     id: 'windpowerlib-gui',
-    title: 'Windpowerlib Dashboard',
+    title: 'Windpowerlib data generator',
     role: 'Data Engineer',
     duration: '2024',
     summary: 'An API-driven analytical application normalizing weather datasets and running complex hub-height wind shear physics to estimate turbine power yields.',
@@ -512,8 +516,8 @@ export const projectsData = [
       '**Advanced Time-Series Transformations**: Empowers users to instantly toggle between cumulative and instantaneous data, leveraging efficient Pandas grouping.',
       '**Side-by-Side Scenario Analysis**: Evaluates multiple simulation runs interactively, streamlining the comparison of grid decarbonization strategies.'
     ],
-    heroImage: '',
-    gallery: [],
+    heroImage: pypsaResultsHeader,
+    gallery: [pypsaResultsHeader, pypsaResultsP1, pypsaResultsP2],
     links: {}
   },
   {
@@ -561,8 +565,8 @@ export const projectsData = [
       '**Performant Data Buffering**: Employs Python deque structures for memory-efficient rolling time-series logs, streaming seamless metrics to the React frontend.',
       '**Hierarchical Grid Visualization**: Implements custom Leaflet polyline rendering to enforce strict structural realism across HV, MV, and LV architectures.'
     ],
-    heroImage: '',
-    gallery: [],
+    heroImage: gridExplorerHome,
+    gallery: [gridExplorerHome],
     links: {}
   },
   {
@@ -585,31 +589,6 @@ export const projectsData = [
       '**Intelligent Hardware Matching**: Algorithmically ranks feasible inverter topologies based on electrical safety, optimal ratios, and module compatibility.',
       '**Continuous Yield Simulation**: Constructs a pvlib ModelChain utilizing fetched TMY weather data to predict annual output and precise clipping losses.',
       '**Transparent Engineering Logic**: Generates auditable CSV reports and explainable rationales behind each recommendation to build trust with technical users.'
-    ],
-    heroImage: '',
-    gallery: [],
-    links: {}
-  },
-  {
-    id: 'autoplot',
-    title: 'AutoPlot: Interactive Data GUI',
-    role: 'Software Engineer',
-    duration: '2025',
-    summary: 'A robust, object-oriented desktop application built with PyQt5 that ingests raw datasets and instantly generates multi-library visualizations without code.',
-    impact: 'Supercharged exploratory data analysis workflows by unifying static and interactive charting engines inside a single, seamless desktop environment.',
-    tech: ['Python', 'PyQt5', 'Pandas', 'Plotly', 'Seaborn'],
-    techStackDetailed: {
-      'Framework': 'PyQt5, QStackedWidget, QWebEngineView',
-      'Data Pipeline': 'Pandas (Dynamic Schema Inference)',
-      'Visualization Engines': 'Matplotlib, Seaborn, Plotly',
-      'Architecture': 'Model-View-Controller (MVC), Adapter Pattern'
-    },
-    overview: 'AutoPlot eliminates the boilerplate associated with basic Exploratory Data Analysis. It provides a stateful GUI where users upload data and seamlessly map variables to 6 different chart types. By architecting an Adapter pattern and leveraging PyQt\'s QStackedWidget, the application effortlessly hot-swaps between rendering static Matplotlib canvases and embedded Chromium web views for interactive Plotly graphs, delivering extreme flexibility for data professionals.',
-    features: [
-      '**Dynamic Schema Inference**: Custom Pandas data ingestion layer that automatically categorizes columns and prevents invalid visual axis mappings.',
-      '**Multi-Engine Visualization**: Seamlessly switches between static rendering (Matplotlib/Seaborn) and highly interactive web components (Plotly).',
-      '**Robust Desktop Architecture**: Built entirely in PyQt5 utilizing the Model-View-Controller pattern to strictly decouple UI logic from data transformations.',
-      '**1-Click Export Pipelines**: Standardizes the reporting process with high-resolution exports across PNG, JPEG, and PDF formats.'
     ],
     heroImage: '',
     gallery: [],

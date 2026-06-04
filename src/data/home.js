@@ -31,7 +31,7 @@ export const homeData = {
             problem: "Manual PV planning is slow and requires technical expertise for geometric and energy calculations.",
             approach: "Built a Next.js + FastAPI system with a GIS layout engine, Shapely-driven constraints, and PVGIS API integration.",
             output: "Engineering suite: CAD-ready DXF layouts, PDF reports, and location-aware energy KPIs.",
-            demo: "#",
+            demo: "https://solar-auto-layout-pdnoenf7l-sherivaijayanth-9859s-projects.vercel.app/",
             repo: "https://github.com/vaijayanth-sheri/Solar_AutoLayout",
             screenshot: solarAutoImg,
         },

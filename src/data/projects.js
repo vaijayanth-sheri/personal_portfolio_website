@@ -46,9 +46,6 @@ import workflowP2 from '/media/Jupyter Workflow manager/page 2.png';
 import plotHomeImg from '/media/Visual plot builder for Jupyter/home.png';
 import plotP1 from '/media/Visual plot builder for Jupyter/page 1.png';
 
-import appthamitraHome from '/media/AppthaMitra/Home.jpg';
-import appthamitraP1 from '/media/AppthaMitra/Page 1.png';
-import appthamitraP2 from '/media/AppthaMitra/page 2.png';
 
 import researchAgentHome from '/media/Automated Research Agent/Hone.png';
 
@@ -312,34 +309,6 @@ export const projectsData = [
       researchAgentHome
     ],
     links: { github: '#' },
-  },
-  {
-    id: 'appthamitra',
-    title: 'AppthaMitra: AgriTech Marketplace',
-    role: 'Product Designer',
-    duration: 'Apr 2025 – May 2025',
-    summary: 'A conceptual, mobile-first hyperlocal agricultural marketplace designed to connect farmers directly with consumers using accessible voice-first interfaces.',
-    impact: 'Designed intuitive digital pathways aimed at reducing post-harvest losses and eliminating middlemen in rural agricultural supply chains.',
-    tech: ['Figma', 'UX Research', 'AgriTech', 'Prototyping'],
-    techStackDetailed: {
-      'Design': 'Figma, Wireframing, Rapid Prototyping',
-      'Research': 'User Personas, Empathy Journey Mapping',
-      'UX Patterns': 'Voice-First Interaction, Geolocation Search',
-      'Domain': 'Sustainable Agriculture'
-    },
-    overview: 'AppthaMitra addresses systemic inefficiencies in the agricultural supply chain by enabling direct-to-consumer sales for local farmers. Recognizing that the target demographic often faces digital literacy barriers, the UX focuses heavily on accessibility—incorporating regional language support, visual iconography, and voice-command capabilities to foster an inclusive community marketplace.',
-    features: [
-      '**Live Food Map Interface**: Conceptualized GPS-based discovery patterns connecting consumers directly with nearby active farms.',
-      '**Voice-First Accessibility**: Designed interactions heavily reliant on audio prompts and visual cues rather than dense text.',
-      '**Dual User Flows**: Optimized entirely distinct but interconnected journeys for Producers (inventory management) and Consumers (discovery and purchase).',
-      '**Community Knowledge Hub**: Prototyped a forum space for sharing agronomic insights and localized market pricing.'
-    ],
-    heroImage: appthamitraHome,
-    gallery: [
-      appthamitraP1,
-      appthamitraP2
-    ],
-    links: { demo: 'https://www.behance.net/vaijayanth_sheri' },
   },
   {
     id: 're-sim',

@@ -140,8 +140,12 @@ const Home = () => {
                         <li><strong>The Outcome</strong> {project.output}</li>
                       </ul>
                       <div className={styles.projectLinks}>
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true" onClick={(e) => e.stopPropagation()}>Execute Demo</a>
-                        <a href={project.repo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true" onClick={(e) => e.stopPropagation()}>Source Code</a>
+                        {project.demo && project.demo !== '#' && !project.demo.includes('[TODO') && (
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true" onClick={(e) => e.stopPropagation()}>Execute Demo</a>
+                        )}
+                        {project.repo && project.repo !== '#' && !project.repo.includes('[TODO') && (
+                          <a href={project.repo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true" onClick={(e) => e.stopPropagation()}>Source Code</a>
+                        )}
                       </div>
                     </div>
                   </article>

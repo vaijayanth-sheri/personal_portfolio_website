@@ -52,9 +52,11 @@ import appthamitraP2 from '/media/AppthaMitra/page 2.png';
 
 import researchAgentHome from '/media/Automated Research Agent/Hone.png';
 
-import pypsaResultsHeader from '/media/PyPSA_results_dashboard/header.png';
-import pypsaResultsP1 from '/media/PyPSA_results_dashboard/page-1.png';
-import pypsaResultsP2 from '/media/PyPSA_results_dashboard/page-2.png';
+import pypsaResultsHome from '/media/PyPSA Results Dashboard/homepage.png';
+import pypsaResultsP1 from '/media/PyPSA Results Dashboard/PAge 1.png';
+import pypsaResultsP2 from '/media/PyPSA Results Dashboard/page 2.png';
+import pypsaResultsP3 from '/media/PyPSA Results Dashboard/page 3.png';
+import pypsaResultsP4 from '/media/PyPSA Results Dashboard/page 4.png';
 
 import gridExplorerHome from '/media/Open energy grid explorer/homepage.png';
 
@@ -516,8 +518,8 @@ export const projectsData = [
       '**Advanced Time-Series Transformations**: Empowers users to instantly toggle between cumulative and instantaneous data, leveraging efficient Pandas grouping.',
       '**Side-by-Side Scenario Analysis**: Evaluates multiple simulation runs interactively, streamlining the comparison of grid decarbonization strategies.'
     ],
-    heroImage: pypsaResultsHeader,
-    gallery: [pypsaResultsHeader, pypsaResultsP1, pypsaResultsP2],
+    heroImage: pypsaResultsHome,
+    gallery: [pypsaResultsHome, pypsaResultsP1, pypsaResultsP2, pypsaResultsP3, pypsaResultsP4],
     links: {}
   },
   {

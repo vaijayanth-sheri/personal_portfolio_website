@@ -60,6 +60,18 @@ import pypsaResultsP4 from '/media/PyPSA Results Dashboard/page 4.png';
 
 import gridExplorerHome from '/media/Open energy grid explorer/homepage.png';
 
+import pvYieldHome from '/media/PV yield report generator/homepage.png';
+import pvYieldP1 from '/media/PV yield report generator/page 1.png';
+import pvYieldP2 from '/media/PV yield report generator/page 2.png';
+import pvYieldP3 from '/media/PV yield report generator/page 3.png';
+import pvYieldP4 from '/media/PV yield report generator/page 4.png';
+
+import inverterHome from '/media/Solar inverter Optimizer/homepage.png';
+import inverterP1 from '/media/Solar inverter Optimizer/page 1.png';
+import inverterP2 from '/media/Solar inverter Optimizer/page 2.png';
+
+import postgresConsoleHome from '/media/Postgre console/hoempage.png';
+
 export const projectsData = [
   {
     id: 'job-tracker',
@@ -474,7 +486,7 @@ export const projectsData = [
   },
   {
     id: 'pv-yield-calculator',
-    title: 'Solar PV Yield Calculator',
+    title: 'Solar PV Yield report generator',
     role: 'Full-Stack Python Developer',
     duration: '2025',
     summary: 'A production-ready feasibility tool utilizing pvlib and PVGIS to simulate 8,760 hours of annual energy yield, outputting automated bilingual client reports.',
@@ -493,9 +505,12 @@ export const projectsData = [
       '**Dual User Interfaces**: Designed with "Quick Mode" for fast sales estimates and "Pro Mode" for detailed technical overrides (albedo, inverter sizing).',
       '**Programmatic PDF Generation**: Assembles professional, multi-page feasibility reports containing dynamic KPIs and embedded charts on the fly.'
     ],
-    heroImage: '',
-    gallery: [],
-    links: {}
+    heroImage: pvYieldHome,
+    gallery: [pvYieldHome, pvYieldP1, pvYieldP2, pvYieldP3, pvYieldP4],
+    links: {
+      demo: 'https://huggingface.co/spaces/Vaijayanth-sheri/PV-Yield-Report-Generator',
+      github: 'https://github.com/vaijayanth-sheri/PV_report_generator'
+    }
   },
   {
     id: 'pypsa-results-dashboard',
@@ -543,9 +558,12 @@ export const projectsData = [
       '**Safe Query Execution**: Wraps raw user queries into safe subqueries to enforce row limits, protecting database performance during ad-hoc exploration.',
       '**In-Memory File Extraction**: Processes massive CSV and Excel exports entirely in RAM using Pandas and BytesIO, supporting stateless cloud deployments.'
     ],
-    heroImage: '',
-    gallery: [],
-    links: {}
+    heroImage: postgresConsoleHome,
+    gallery: [postgresConsoleHome],
+    links: {
+      demo: 'https://huggingface.co/spaces/Vaijayanth-sheri/postgres-console',
+      github: 'https://github.com/vaijayanth-sheri/Project_postgres_console'
+    }
   },
   {
     id: 'open-energy-grid-explorer',
@@ -592,8 +610,11 @@ export const projectsData = [
       '**Continuous Yield Simulation**: Constructs a pvlib ModelChain utilizing fetched TMY weather data to predict annual output and precise clipping losses.',
       '**Transparent Engineering Logic**: Generates auditable CSV reports and explainable rationales behind each recommendation to build trust with technical users.'
     ],
-    heroImage: '',
-    gallery: [],
-    links: {}
+    heroImage: inverterHome,
+    gallery: [inverterHome, inverterP1, inverterP2],
+    links: {
+      demo: 'https://huggingface.co/spaces/Vaijayanth-sheri/Project-inverter-sizing',
+      github: 'https://github.com/vaijayanth-sheri/Project_inverter_sizing'
+    }
   }
 ];

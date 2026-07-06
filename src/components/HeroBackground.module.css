@@ -1,0 +1,135 @@
+.backgroundWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Sits completely behind all page content */
+  pointer-events: none; /* Let clicks pass through to the real content */
+  background: radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 0.4) 0%, rgba(10, 10, 10, 1) 100%);
+}
+
+.svgCanvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Base style for engineering vectors */
+.engineeringVector {
+  stroke: var(--color-accent);
+  fill: none;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 6px var(--color-accent));
+}
+
+/* Faint gray lines for background utility towers */
+.utilityLine {
+  stroke: rgba(255, 255, 255, 0.15);
+  fill: none;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.utilityFill {
+  fill: rgba(255, 255, 255, 0.01); /* almost transparent */
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.towerNode {
+  fill: var(--color-accent);
+  filter: drop-shadow(0 0 5px var(--color-accent));
+  opacity: 0.8;
+}
+
+/* Highlight elements using the lime accent */
+.accentVector {
+  stroke: var(--color-accent);
+  opacity: 0.8;
+  filter: drop-shadow(0 0 10px var(--color-accent));
+}
+
+/* Base style for solid filled areas (like solar panels) */
+.engineeringFill {
+  fill: rgba(198, 255, 0, 0.05); /* Faint tint of lime */
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 6px var(--color-accent));
+}
+
+/* Terrain waves */
+.terrainLine {
+  stroke: var(--color-accent);
+  fill: none;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Dot grid pattern */
+.dotGrid {
+  fill: url(#dotPattern);
+  opacity: 0.6;
+}
+
+/* Glowing connection nodes */
+.glowNode {
+  fill: var(--color-accent);
+  filter: drop-shadow(0 0 10px var(--color-accent));
+  opacity: 0.9;
+}
+
+/* Glow node animation */
+.pulseNode {
+  animation: pulseGlow 4s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.1; transform: scale(0.9); }
+  100% { opacity: 0.6; transform: scale(1.1); }
+}
+
+/* Wind turbine blade animation */
+.spinBlades {
+  transform-origin: 85% 65%; /* Adjusted dynamically via inline styles */
+  animation: spin 20s linear infinite;
+}
+
+.spinBladesSlow {
+  transform-origin: 92% 75%; /* Adjusted dynamically via inline styles */
+  animation: spin 30s linear infinite reverse;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* A soft vignette overlay to give depth and blur edges */
+.vignetteOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 40%, rgba(10, 10, 10, 0.8) 100%);
+  pointer-events: none;
+}
+
+/* Soft highlight glow behind the main text */
+.glowBackdrop {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  width: 80vw;
+  height: 80vh;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(198, 255, 0, 0.025) 0%, transparent 60%);
+  filter: blur(80px);
+  pointer-events: none;
+}

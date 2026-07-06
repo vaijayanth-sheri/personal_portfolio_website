@@ -5,9 +5,9 @@
   --font-family-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
   /* Colors (Volt & Obsidian) */
-  --color-background: #050505; 
-  --color-surface: #0F1115;
-  --color-surface-hover: #16181D;
+  --color-background: rgba(5, 5, 5, 0.9); /* 10% transparent */
+  --color-surface: rgba(15, 17, 21, 0.9); /* 10% transparent */
+  --color-surface-hover: #16181D; /* 100% solid on hover */
   --color-primary: #F4F4F5;
   --color-secondary: #8B949E; 
   --color-border: #1A1A1A;
@@ -40,7 +40,7 @@
 
 html {
   font-family: var(--font-family-sans);
-  background-color: var(--color-background);
+  background-color: #050505; /* Solid base behind everything */
   color: var(--color-primary);
   line-height: 1.6;
   font-synthesis: none;

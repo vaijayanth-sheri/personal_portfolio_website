@@ -10,26 +10,34 @@ const Contact = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>{statement.title}</h1>
-        <h2 className={styles.subtitle}>{statement.heading}</h2>
+        <FocusText>
+          <h1 className={styles.title}>{statement.title}</h1>
+          <h2 className={styles.subtitle}>{statement.heading}</h2>
+        </FocusText>
       </header>
 
-      <FocusText as="section" className={styles.intro}>
-        <p>{statement.text}</p>
-      </FocusText>
+      <section className={styles.intro}>
+        <FocusText>
+          <p>{statement.text}</p>
+        </FocusText>
+      </section>
 
       <section className={styles.engagementSection}>
-        <h3 className={styles.sectionTitle}>{engagement.title}</h3>
-        <ul className={styles.categoryList}>
-          {engagement.categories.map((cat, index) => (
-            <li key={index} className={styles.categoryItem}>{cat}</li>
-          ))}
-        </ul>
+        <FocusText>
+          <h3 className={styles.sectionTitle}>{engagement.title}</h3>
+          <ul className={styles.categoryList}>
+            {engagement.categories.map((cat, index) => (
+              <li key={index} className={styles.categoryItem}>{cat}</li>
+            ))}
+          </ul>
+        </FocusText>
       </section>
 
       <section className={styles.contactDetails}>
-        <h3 className={styles.sectionTitle}>{contactInfo.title}</h3>
-        <FocusText as="p" className={styles.contactText}>{contactInfo.text}</FocusText>
+        <FocusText>
+          <h3 className={styles.sectionTitle}>{contactInfo.title}</h3>
+          <p className={styles.contactText}>{contactInfo.text}</p>
+        </FocusText>
 
         <div className={styles.detailRow}>
           <span className={styles.iconWrapper}><FaEnvelope className={styles.icon} /></span>
@@ -60,7 +68,9 @@ const Contact = () => {
         </div>
       </section>
 
-      <p className={styles.closing}>{closing}</p>
+      <FocusText>
+        <p className={styles.closing}>{closing}</p>
+      </FocusText>
     </div>
   );
 };

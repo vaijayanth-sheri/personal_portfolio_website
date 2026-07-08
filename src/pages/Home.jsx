@@ -45,14 +45,16 @@ const Home = () => {
             <h1 className={styles.name}>
               {hero.name.split(' ')[0]} <span className={styles.highlightName}>{hero.name.split(' ').slice(1).join(' ')}</span>
             </h1>
-            <h2 className={styles.title}>
-              {hero.title.split('|').map((tag, index, arr) => (
-                <span key={index} style={{ display: 'block', marginBottom: '0.3rem' }}>
-                  {tag.trim()}{index < arr.length - 1 ? ' |' : ''}
-                </span>
-              ))}
-            </h2>
-            <FocusText as="p" className={styles.subheadline}>{hero.subheadline}</FocusText>
+            <FocusText>
+              <h2 className={styles.title}>
+                {hero.title.split('|').map((tag, index, arr) => (
+                  <span key={index} style={{ display: 'block', marginBottom: '0.3rem' }}>
+                    {tag.trim()}{index < arr.length - 1 ? ' |' : ''}
+                  </span>
+                ))}
+              </h2>
+              <p className={styles.subheadline}>{hero.subheadline}</p>
+            </FocusText>
             <div className={styles.heroCtas}>
               <Link to={hero.ctaPrimary.to} className={styles.btnPrimary} data-cursor-pointer="true">{hero.ctaPrimary.label}</Link>
               <Link to={hero.ctaSecondary.to} className={styles.btnSecondary} data-cursor-pointer="true">{hero.ctaSecondary.label}</Link>
@@ -227,9 +229,11 @@ const Home = () => {
         <div className={styles.processGrid}>
           {howIWork.map((step, i) => (
             <div key={i} className={styles.processStep}>
-              <span className={styles.stepNumber}>PHASE_{step.step}</span>
-              <h4 className={styles.stepTitle}>{step.title}</h4>
-              <FocusText as="p" className={styles.stepDesc}>{step.description}</FocusText>
+              <FocusText>
+                <span className={styles.stepNumber}>PHASE_{step.step}</span>
+                <h4 className={styles.stepTitle}>{step.title}</h4>
+                <p className={styles.stepDesc}>{step.description}</p>
+              </FocusText>
             </div>
           ))}
         </div>
@@ -252,8 +256,10 @@ const Home = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.collabTitle}>{collaboration.title}</h2>
-          <FocusText as="p" className={styles.collabText}>{collaboration.description}</FocusText>
+          <FocusText>
+            <h2 className={styles.collabTitle}>{collaboration.title}</h2>
+            <p className={styles.collabText}>{collaboration.description}</p>
+          </FocusText>
           <Link to={collaboration.ctaTo} className={styles.btnPrimary} data-cursor-pointer="true">{collaboration.ctaLabel}</Link>
         </motion.div>
       </section>

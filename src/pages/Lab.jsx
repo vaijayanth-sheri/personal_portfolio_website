@@ -8,21 +8,23 @@ const Lab = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <motion.h2 
-          className={styles.title}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          The Lab
-        </motion.h2>
-        <FocusText as={motion.p} 
-          className={styles.subtitle}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Ongoing Research & Development // Prototyping Digital Energy Systems
+        <FocusText>
+          <motion.h2 
+            className={styles.title}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            The Lab
+          </motion.h2>
+          <motion.p 
+            className={styles.subtitle}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Ongoing Research & Development // Prototyping Digital Energy Systems
+          </motion.p>
         </FocusText>
       </header>
 

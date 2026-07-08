@@ -8,9 +8,11 @@ const Capabilities = () => {
   return (
     <div className={styles.pageWrapper}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Capabilities</h1>
-        <FocusText as="p" className={styles.subtitle}>
-          Repeatable, outcome-oriented systems designed to solve complex challenges in the energy domain.
+        <FocusText>
+          <h1 className={styles.title}>Capabilities</h1>
+          <p className={styles.subtitle}>
+            Repeatable, outcome-oriented systems designed to solve complex challenges in the energy domain.
+          </p>
         </FocusText>
       </header>
       <div className={styles.grid}>

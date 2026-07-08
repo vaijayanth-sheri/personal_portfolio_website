@@ -8,9 +8,11 @@ const Projects = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h2 className={styles.title}>All Projects</h2>
-        <FocusText as="p" className={styles.subtitle}>
-          Exploring energy systems, data visualization, and sustainable tech through code.
+        <FocusText>
+          <h2 className={styles.title}>All Projects</h2>
+          <p className={styles.subtitle}>
+            Exploring energy systems, data visualization, and sustainable tech through code.
+          </p>
         </FocusText>
       </header>
 

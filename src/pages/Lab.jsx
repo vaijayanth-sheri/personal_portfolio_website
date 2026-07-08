@@ -2,6 +2,7 @@ import { labData } from '../data/lab';
 import styles from './Lab.module.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import FocusText from '../components/core/FocusText';
 
 const Lab = () => {
   return (
@@ -15,14 +16,14 @@ const Lab = () => {
         >
           The Lab
         </motion.h2>
-        <motion.p 
+        <FocusText as={motion.p} 
           className={styles.subtitle}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           Ongoing Research & Development // Prototyping Digital Energy Systems
-        </motion.p>
+        </FocusText>
       </header>
 
       <div className={styles.gridContainer}>

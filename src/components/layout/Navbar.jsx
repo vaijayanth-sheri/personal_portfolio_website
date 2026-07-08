@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { homeData } from '../../data/home.js';
-import { FaHome, FaBolt, FaBriefcase, FaFlask, FaUser, FaEnvelope } from 'react-icons/fa';
-
+import { FaHome, FaBolt, FaBriefcase, FaFlask, FaUser, FaEnvelope, FaSun, FaMoon } from 'react-icons/fa';
 const navLinks = [
   { path: '/', label: 'Home', icon: <FaHome /> },
   { path: '/capabilities', label: 'Capabilities', icon: <FaBolt /> },
@@ -17,6 +16,23 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) return savedTheme;
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'light';
+    }
+    return 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -56,6 +72,15 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+        {/* Theme Toggle Button */}
+        <button 
+          className={styles.themeToggle} 
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          {theme === 'dark' ? <FaSun /> : <FaMoon />}
+        </button>
 
         {/* Hamburger Button */}
         <button

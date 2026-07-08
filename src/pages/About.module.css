@@ -2,7 +2,7 @@
     max-width: 900px;
     margin: 0 auto;
     padding: 4rem 2rem;
-    color: #eceff1;
+    color: var(--color-primary);
 }
 
 .section {
@@ -27,7 +27,7 @@
 .aboutText {
     font-size: 1.15rem;
     line-height: 1.8;
-    color: #cfd8dc;
+    color: var(--color-secondary);
     max-width: 800px;
 }
 
@@ -39,7 +39,7 @@
 
 .experienceItem {
     padding-left: 1.5rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: 2px solid var(--color-border);
     transition: border-left-color 0.3s;
 }
 
@@ -54,20 +54,20 @@
 .roleTitle {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--color-primary);
     margin-bottom: 0.25rem;
 }
 
 .roleSubtitle {
     font-size: 1rem;
-    color: #90a4ae;
+    color: var(--color-secondary);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .roleDate {
     font-size: 0.9rem;
-    color: #546e7a;
+    color: var(--color-secondary);
     text-transform: none;
     letter-spacing: normal;
     margin-left: 0.5rem;
@@ -76,7 +76,7 @@
 .roleDescription {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #b0bec5;
+    color: var(--color-secondary);
 }
 
 .educationItem {
@@ -86,7 +86,7 @@
 .degree {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--color-primary);
     margin-bottom: 0.25rem;
 }
 
@@ -99,13 +99,13 @@
 .eduDetails {
     font-size: 1rem;
     line-height: 1.6;
-    color: #b0bec5;
+    color: var(--color-secondary);
 }
 
 .contactContent {
     font-size: 1.15rem;
     line-height: 1.8;
-    color: #cfd8dc;
+    color: var(--color-secondary);
     margin-bottom: 2rem;
 }
 

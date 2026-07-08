@@ -43,6 +43,10 @@
   transition: var(--transition-slow);
 }
 
+:global([data-theme="light"]) .profileImg {
+  filter: grayscale(0%) contrast(1);
+}
+
 .photoWrapper:hover .profileImg {
   filter: grayscale(0%) contrast(1);
   border-color: var(--color-accent);
@@ -103,6 +107,10 @@
 .btnPrimary {
   background-color: var(--color-accent);
   color: #000;
+}
+
+:global([data-theme="light"]) .btnPrimary {
+  color: #FFFFFF; /* High contrast against the Solar Orange accent */
 }
 
 .btnPrimary:hover {
@@ -702,6 +710,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+:global([data-theme="light"]) .btnPrimaryGlow {
+  color: #FFFFFF;
 }
 
 .btnPrimaryGlow:hover {

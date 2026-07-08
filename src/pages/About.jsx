@@ -1,6 +1,7 @@
 import React from 'react';
 import { profileData } from '../data/profile';
 import styles from './About.module.css';
+import FocusText from '../components/core/FocusText';
 
 const About = () => {
   const { about, experience, education, contact } = profileData;
@@ -10,7 +11,7 @@ const About = () => {
       {/* About Section */}
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{about.title}</h2>
-        <p className={styles.aboutText}>{about.content}</p>
+        <FocusText as="p" className={styles.aboutText}>{about.content}</FocusText>
       </section>
 
       {/* Experience Section */}
@@ -25,7 +26,7 @@ const About = () => {
                   {role.role} <span className={styles.roleDate}> | {role.date}</span>
                 </div>
               </div>
-              <p className={styles.roleDescription}>{role.description}</p>
+              <FocusText as="p" className={styles.roleDescription}>{role.description}</FocusText>
             </div>
           ))}
         </div>
@@ -38,7 +39,7 @@ const About = () => {
           <div key={index} className={styles.educationItem}>
             <h3 className={styles.degree}>{item.degree}</h3>
             {item.institution && <div className={styles.institution}>{item.institution}</div>}
-            <p className={styles.eduDetails}>{item.details}</p>
+            <FocusText as="p" className={styles.eduDetails}>{item.details}</FocusText>
           </div>
         ))}
       </section>
@@ -46,7 +47,7 @@ const About = () => {
       {/* Contact Section */}
       <section className={styles.section} id="contact">
         <h2 className={styles.sectionTitle}>{contact.title}</h2>
-        <p className={styles.contactContent}>{contact.content}</p>
+        <FocusText as="p" className={styles.contactContent}>{contact.content}</FocusText>
         <div className={styles.linkGroup}>
           <a href={contact.links.github} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>GitHub ↗</a>
           <a href={contact.links.linkedin} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>LinkedIn ↗</a>

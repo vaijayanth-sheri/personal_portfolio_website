@@ -8,6 +8,23 @@
   z-index: -1; /* Sits completely behind all page content */
   pointer-events: none; /* Let clicks pass through to the real content */
   background: radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 0.4) 0%, rgba(10, 10, 10, 1) 100%);
+  transition: background 0.3s ease;
+}
+
+:global([data-theme="light"]) .backgroundWrapper {
+  background:
+    /* The Sun on the left edge */
+    radial-gradient(circle at 0% 10%, rgba(251, 146, 60, 0.9) 0%, rgba(251, 146, 60, 0.8) 4%, rgba(253, 186, 116, 0.4) 12%, rgba(253, 230, 138, 0.15) 25%, transparent 45%),
+    /* City/Sun warm haze near horizon */
+    radial-gradient(circle at 65% 55%, rgba(253, 224, 71, 0.15) 0%, transparent 40%),
+    /* Green terrain - left bottom */
+    radial-gradient(ellipse at 15% 100%, rgba(167, 243, 208, 0.6) 0%, transparent 50%),
+    /* Earthy brown/sand terrain - right bottom */
+    radial-gradient(ellipse at 85% 100%, rgba(253, 230, 138, 0.5) 0%, transparent 55%),
+    /* Deep green accent - center bottom */
+    radial-gradient(ellipse at 50% 110%, rgba(110, 231, 183, 0.4) 0%, transparent 60%),
+    /* Main Sky Gradient */
+    linear-gradient(to bottom, #7DD3FC 0%, #BAE6FD 25%, #E0F2FE 50%, #F8FAFC 80%);
 }
 
 .svgCanvas {
@@ -35,11 +52,20 @@
   vector-effect: non-scaling-stroke;
 }
 
+:global([data-theme="light"]) .utilityLine {
+  stroke: rgba(37, 99, 235, 0.35); /* Increased visibility */
+}
+
 .utilityFill {
   fill: rgba(255, 255, 255, 0.01); /* almost transparent */
   stroke: rgba(255, 255, 255, 0.15);
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
+}
+
+:global([data-theme="light"]) .utilityFill {
+  fill: rgba(37, 99, 235, 0.08); /* Increased visibility */
+  stroke: rgba(37, 99, 235, 0.35);
 }
 
 .towerNode {
@@ -63,6 +89,10 @@
   filter: drop-shadow(0 0 6px var(--color-accent));
 }
 
+:global([data-theme="light"]) .engineeringFill {
+  fill: rgba(37, 99, 235, 0.15); /* Increased tint visibility */
+}
+
 /* Terrain waves */
 .terrainLine {
   stroke: var(--color-accent);
@@ -75,6 +105,14 @@
 .dotGrid {
   fill: url(#dotPattern);
   opacity: 0.6;
+}
+
+.dotGridCircle {
+  fill: rgba(198, 255, 0, 0.15);
+}
+
+:global([data-theme="light"]) .dotGridCircle {
+  fill: rgba(37, 99, 235, 0.35); /* More visible dot pattern */
 }
 
 /* Glowing connection nodes */
@@ -121,6 +159,11 @@
   pointer-events: none;
 }
 
+:global([data-theme="light"]) .vignetteOverlay {
+  /* A soft white vignette so we don't wash out the painted colors with grey */
+  background: radial-gradient(circle, transparent 40%, rgba(255, 255, 255, 0.6) 100%);
+}
+
 /* Soft highlight glow behind the main text */
 .glowBackdrop {
   position: absolute;
@@ -132,4 +175,104 @@
   background: radial-gradient(circle, rgba(198, 255, 0, 0.025) 0%, transparent 60%);
   filter: blur(80px);
   pointer-events: none;
+}
+
+:global([data-theme="light"]) .glowBackdrop {
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
+}
+
+/* Solar Panel Specific Colors */
+.solarPanelFill {
+  fill: rgba(10, 80, 180, 0.5); /* Saturated deep blue, slightly more intense */
+  stroke: rgba(200, 210, 220, 0.2); /* Faint silver frame */
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+:global([data-theme="light"]) .solarPanelFill {
+  fill: rgba(10, 80, 180, 0.45); /* Much brighter blue tint in light mode */
+  stroke: rgba(10, 80, 180, 0.6);
+}
+
+.solarPanelGrid {
+  stroke: rgba(200, 210, 220, 0.15); /* Silver grid lines */
+  fill: none;
+  stroke-width: 0.5;
+  vector-effect: non-scaling-stroke;
+}
+
+:global([data-theme="light"]) .solarPanelGrid {
+  stroke: rgba(26, 54, 93, 0.25); /* Darker blue grid lines in light mode */
+}
+
+/* Battery Specific Colors */
+.batteryCasing {
+  fill: rgba(0, 0, 0, 0.2); 
+  stroke: rgba(200, 210, 220, 0.3);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+:global([data-theme="light"]) .batteryCasing {
+  fill: rgba(255, 255, 255, 0.5);
+  stroke: rgba(100, 110, 120, 0.3);
+}
+
+.batteryChargeDark {
+  fill: rgba(34, 197, 94, 0.5); /* Vibrant green, ghosted for background */
+  display: block;
+}
+
+:global([data-theme="light"]) .batteryChargeDark {
+  display: none;
+}
+
+.batteryChargeLight {
+  fill: rgba(34, 197, 94, 0.35); /* Softer green in light mode to not distract */
+  display: none;
+}
+
+:global([data-theme="light"]) .batteryChargeLight {
+  display: block;
+}
+
+.batteryLightning {
+  fill: rgba(250, 204, 21, 0.7); /* Electric yellow */
+  stroke: none;
+}
+
+:global([data-theme="light"]) .batteryLightning {
+  fill: rgba(234, 179, 8, 0.8); /* Slightly darker yellow/gold for contrast in light mode */
+}
+
+/* Wind Turbine Specific Colors */
+.turbineBody {
+  fill: rgba(240, 245, 250, 0.4); /* Faint white/light grey */
+  stroke: rgba(200, 210, 220, 0.3);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+:global([data-theme="light"]) .turbineBody {
+  fill: rgba(255, 255, 255, 0.8); /* Solid white in light mode to stand out against grey */
+  stroke: rgba(150, 160, 170, 0.4);
+}
+
+.turbineTip {
+  fill: rgba(239, 68, 68, 0.6); /* Safety red with opacity to stay backgrounded */
+}
+
+:global([data-theme="light"]) .turbineTip {
+  fill: rgba(220, 38, 38, 0.7); /* Slightly stronger red for light mode */
+}
+
+/* City Skyline Window Lights */
+.windowLight {
+  fill: rgba(250, 204, 21, 0.7); /* Soft yellow glow */
+  filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.9));
+  animation: pulseGlow 5s infinite alternate;
+}
+
+:global([data-theme="light"]) .windowLight {
+  display: none;
 }

@@ -6,6 +6,7 @@ import profilePhoto from '/media/Profile_Sheri.jpg';
 import jobTrackerImg from '/media/Job application tracker/homepage.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectCoverflow } from 'swiper/modules';
+import FocusText from '../components/core/FocusText';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
@@ -51,7 +52,7 @@ const Home = () => {
                 </span>
               ))}
             </h2>
-            <p className={styles.subheadline}>{hero.subheadline}</p>
+            <FocusText as="p" className={styles.subheadline}>{hero.subheadline}</FocusText>
             <div className={styles.heroCtas}>
               <Link to={hero.ctaPrimary.to} className={styles.btnPrimary} data-cursor-pointer="true">{hero.ctaPrimary.label}</Link>
               <Link to={hero.ctaSecondary.to} className={styles.btnSecondary} data-cursor-pointer="true">{hero.ctaSecondary.label}</Link>
@@ -228,7 +229,7 @@ const Home = () => {
             <div key={i} className={styles.processStep}>
               <span className={styles.stepNumber}>PHASE_{step.step}</span>
               <h4 className={styles.stepTitle}>{step.title}</h4>
-              <p className={styles.stepDesc}>{step.description}</p>
+              <FocusText as="p" className={styles.stepDesc}>{step.description}</FocusText>
             </div>
           ))}
         </div>
@@ -252,7 +253,7 @@ const Home = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className={styles.collabTitle}>{collaboration.title}</h2>
-          <p className={styles.collabText}>{collaboration.description}</p>
+          <FocusText as="p" className={styles.collabText}>{collaboration.description}</FocusText>
           <Link to={collaboration.ctaTo} className={styles.btnPrimary} data-cursor-pointer="true">{collaboration.ctaLabel}</Link>
         </motion.div>
       </section>

@@ -1,0 +1,43 @@
+.focusWrapper {
+  position: relative;
+  /* Don't restrict the child's display, but ensure relative positioning works */
+}
+
+.focusBlurLayer {
+  position: absolute;
+  /* Make the blur layer bleed out well past the text so the spotlight effect feels natural */
+  top: -150px;
+  left: -150px;
+  right: -150px;
+  bottom: -150px;
+  pointer-events: none;
+  z-index: 0;
+  
+  /* Apply the blur */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  /* Mask it using a radial gradient centered precisely on the mouse cursor */
+  /* The center of the circle must offset for the -150px inset we added above */
+  mask-image: radial-gradient(circle 250px at calc(var(--mouse-x) + 150px) calc(var(--mouse-y) + 150px), black 0%, rgba(0,0,0,0.5) 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle 250px at calc(var(--mouse-x) + 150px) calc(var(--mouse-y) + 150px), black 0%, rgba(0,0,0,0.5) 40%, transparent 80%);
+  
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  
+  /* Optional: a very faint darkening/lightening tint inside the spotlight */
+  background: rgba(0, 0, 0, 0.4);
+}
+
+:global([data-theme="light"]) .focusBlurLayer {
+  background: rgba(255, 255, 255, 0.5); /* Faint lightening tint in light mode */
+}
+
+.focusBlurLayer.active {
+  opacity: 1;
+}
+
+.focusContent {
+  position: relative;
+  z-index: 1;
+}

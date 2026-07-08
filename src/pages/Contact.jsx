@@ -2,6 +2,7 @@ import React from 'react';
 import { contactData } from '../data/contact';
 import styles from './Contact.module.css';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import FocusText from '../components/core/FocusText';
 
 const Contact = () => {
   const { statement, engagement, contactInfo, closing } = contactData;
@@ -13,9 +14,9 @@ const Contact = () => {
         <h2 className={styles.subtitle}>{statement.heading}</h2>
       </header>
 
-      <section className={styles.intro}>
+      <FocusText as="section" className={styles.intro}>
         <p>{statement.text}</p>
-      </section>
+      </FocusText>
 
       <section className={styles.engagementSection}>
         <h3 className={styles.sectionTitle}>{engagement.title}</h3>
@@ -28,7 +29,7 @@ const Contact = () => {
 
       <section className={styles.contactDetails}>
         <h3 className={styles.sectionTitle}>{contactInfo.title}</h3>
-        <p className={styles.contactText}>{contactInfo.text}</p>
+        <FocusText as="p" className={styles.contactText}>{contactInfo.text}</FocusText>
 
         <div className={styles.detailRow}>
           <span className={styles.iconWrapper}><FaEnvelope className={styles.icon} /></span>

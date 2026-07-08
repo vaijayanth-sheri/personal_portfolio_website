@@ -7,7 +7,7 @@
   top: 0;
   z-index: 10;
   backdrop-filter: blur(8px);
-  background-color: hsla(213, 18%, 10%, 0.8);
+  /* Added a bit of transparency to the theme variables instead, or we can use a new var, but let's just rely on var(--color-background) which has some transparency in dark mode by default */
 }
 
 .nav {
@@ -33,6 +33,7 @@
   list-style: none;
   display: flex;
   gap: var(--space-6);
+  align-items: center;
 }
 
 .navLink {
@@ -58,6 +59,31 @@
   font-size: 1.1rem;
   vertical-align: text-bottom;
   display: inline-flex;
+}
+
+.themeToggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  margin-left: var(--space-4);
+}
+
+.themeToggle:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: rgba(204, 255, 0, 0.05); /* very faint accent bg */
+}
+
+[data-theme="light"] .themeToggle:hover {
+  background: rgba(37, 99, 235, 0.05);
 }
 
 /* Hamburger Button */

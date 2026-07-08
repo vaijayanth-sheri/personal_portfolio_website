@@ -27,9 +27,25 @@
   --space-12: 3rem;
   --space-16: 4rem;
 
+  /* Base color for html */
+  --color-base: #050505;
+
   /* Transitions */
   --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] {
+  --color-background: #E5E7EB; /* More intense light grey */
+  --color-surface: #FFFFFF; /* Pure white for cards to shine */
+  --color-surface-hover: #F9FAFB;
+  --color-primary: #020617; /* Slate 950 - pure dark for maximum readability */
+  --color-secondary: #1E293B; /* Slate 800 - very crisp against grey */
+  --color-border: #D1D5DB; /* Darker border for contrast */
+  --color-accent: #EA580C; /* Vibrant Solar Orange for high contrast and warmth */
+  --color-accent-hover: #C2410C;
+  --color-accent-secondary: #059669; /* Deep Emerald */
+  --color-base: #E5E7EB;
 }
 
 *, *::before, *::after {
@@ -40,11 +56,12 @@
 
 html {
   font-family: var(--font-family-sans);
-  background-color: #050505; /* Solid base behind everything */
+  background-color: var(--color-base); /* Solid base behind everything */
   color: var(--color-primary);
   line-height: 1.6;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -52,6 +69,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Grid Overlay */
@@ -68,6 +86,12 @@ body::before {
   background-size: 60px 60px;
   pointer-events: none;
   z-index: -1;
+}
+
+[data-theme="light"] body::before {
+  background-image: 
+    linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
 }
 
 a {

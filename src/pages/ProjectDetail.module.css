@@ -3,7 +3,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    color: #fff;
+    color: var(--color-primary);
     animation: fadeIn 0.5s ease-out;
 }
 
@@ -23,7 +23,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #a0a0a0;
+    color: var(--color-secondary);
     text-decoration: none;
     font-size: 0.95rem;
     margin-bottom: 2rem;
@@ -31,7 +31,7 @@
 }
 
 .backButton:hover {
-    color: #fff;
+    color: var(--color-primary);
 }
 
 .header {
@@ -39,7 +39,7 @@
 }
 
 .headerContent {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 1.5rem;
 }
 
@@ -72,28 +72,29 @@
 
 .duration {
     font-family: monospace;
-    color: #90a4ae;
-    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-secondary);
+    background: var(--color-background);
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
+    border: 1px solid var(--color-border);
 }
 
 .linkButton {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+    background: var(--color-surface);
     padding: 0.5rem 1rem;
     border-radius: 8px;
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--color-border);
 }
 
 .linkButton:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--color-surface-hover);
     transform: translateY(-2px);
 }
 
@@ -138,7 +139,7 @@
 .overviewText {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #b0bec5;
+    color: var(--color-secondary);
 }
 
 .featureList {
@@ -150,7 +151,7 @@
     margin-bottom: 1rem;
     padding-left: 1.5rem;
     position: relative;
-    color: #cfd8dc;
+    color: var(--color-secondary);
     line-height: 1.6;
 }
 
@@ -168,16 +169,16 @@
 }
 
 .techPanel {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--color-surface);
     padding: 1.5rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--color-border);
 }
 
 .panelTitle {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: var(--color-primary);
 }
 
 .techDetailed {
@@ -194,13 +195,13 @@
 
 .techLabel {
     font-size: 0.75rem;
-    color: #78909c;
+    color: var(--color-secondary);
     text-transform: uppercase;
 }
 
 .techValue {
     font-size: 0.95rem;
-    color: #cfd8dc;
+    color: var(--color-primary);
 }
 
 .impactPanel {
@@ -211,7 +212,7 @@
 
 .impactText {
     font-style: italic;
-    color: #e0f2f1;
+    color: var(--color-secondary);
     line-height: 1.6;
 }
 

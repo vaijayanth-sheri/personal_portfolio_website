@@ -37,8 +37,8 @@
 
 [data-theme="light"] {
   --color-background: #E5E7EB; /* More intense light grey */
-  --color-surface: #FFFFFF; /* Pure white for cards to shine */
-  --color-surface-hover: #F9FAFB;
+  --color-surface: rgba(255, 255, 255, 0.6); /* Translucent white to blend with canvas */
+  --color-surface-hover: rgba(255, 255, 255, 0.85);
   --color-primary: #020617; /* Slate 950 - pure dark for maximum readability */
   --color-secondary: #1E293B; /* Slate 800 - very crisp against grey */
   --color-border: #D1D5DB; /* Darker border for contrast */

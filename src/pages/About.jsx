@@ -18,7 +18,9 @@ const About = () => {
 
       {/* Experience Section */}
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>{experience.title}</h2>
+        <FocusText>
+          <h2 className={styles.sectionTitle}>{experience.title}</h2>
+        </FocusText>
         <div className={styles.experienceList}>
           {experience.roles.map((role) => (
             <div key={role.id} className={styles.experienceItem}>
@@ -38,7 +40,9 @@ const About = () => {
 
       {/* Education Section */}
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>{education.title}</h2>
+        <FocusText>
+          <h2 className={styles.sectionTitle}>{education.title}</h2>
+        </FocusText>
         {education.items.map((item, index) => (
           <div key={index} className={styles.educationItem}>
             <FocusText>

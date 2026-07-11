@@ -139,21 +139,25 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 280px;
+  width: 100vw;
   background: var(--color-surface);
-  border-left: 1px solid var(--color-border);
   padding: var(--space-8) var(--space-6);
   z-index: 50;
   animation: slideInRight 0.3s ease-out;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobileNavList {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
-  margin-top: var(--space-8);
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 300px;
 }
 
 .mobileNavLink {
@@ -230,18 +234,28 @@
   }
 }
 
-/* Mobile (< 768px) */
+/* Mobile (< 767px) */
 @media (max-width: 767px) {
   .header {
     padding: var(--space-3) var(--space-4);
   }
 
+  .nav {
+    justify-content: flex-start;
+  }
+
   .logo {
     font-size: 1rem;
+    margin-right: auto;
   }
 
   .navList {
     display: none;
+  }
+
+  .themeToggle {
+    margin-left: 0;
+    margin-right: var(--space-2);
   }
 
   .hamburger {
@@ -250,6 +264,6 @@
 
   .mobileOverlay,
   .mobileMenu {
-    display: block;
+    display: flex;
   }
 }

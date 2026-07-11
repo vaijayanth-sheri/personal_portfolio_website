@@ -461,6 +461,26 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1rem 3rem 1rem;
+  }
+
+  .heroSection {
+    padding: 3rem 0;
+    min-height: auto;
+  }
+
+  .selectedWorkSection,
+  .labSection,
+  .capSection,
+  .processSection {
+    padding: 4rem 0;
+  }
+
+  .collabSection {
+    padding: 6rem 0;
+  }
+
   .heroInner {
     flex-direction: column;
     text-align: center;
@@ -468,7 +488,7 @@
   }
 
   .name {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .heroCtas {
@@ -524,7 +544,7 @@
 
 .labGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3rem;
 }
 
@@ -787,5 +807,16 @@
 
   .jobTrackerActions {
     justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobTrackerSection {
+    padding: 3rem 0;
+    margin: 2rem 0 3rem 0;
+  }
+  
+  .jobTrackerContainer {
+    padding: 0 1rem;
   }
 }

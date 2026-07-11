@@ -81,6 +81,16 @@ const ProjectDetail = () => {
                     const idx = allImages.indexOf(project.heroImage);
                     if (idx !== -1) setModalIndex(idx);
                 }}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const idx = allImages.indexOf(project.heroImage);
+                        if (idx !== -1) setModalIndex(idx);
+                    }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Expand ${project.title} image`}
                 data-cursor-pointer="true"
             >
                 <img src={project.heroImage} alt={project.title} className={styles.heroImage} />
@@ -149,9 +159,22 @@ const ProjectDetail = () => {
                                         if (idx !== -1) setModalIndex(idx);
                                     }
                                 }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        const isPlaceholder = typeof img === 'string' && img.includes('placehold.co');
+                                        if (!isPlaceholder) {
+                                            const idx = allImages.indexOf(img);
+                                            if (idx !== -1) setModalIndex(idx);
+                                        }
+                                    }
+                                }}
+                                role="button"
+                                tabIndex={0}
+                                aria-label={`Expand gallery image ${index + 1}`}
                                 data-cursor-pointer="true"
                             >
-                                <img src={img} alt={`Gallery ${index + 1}`} loading="lazy" />
+                                <img src={img} alt={`${project.title} gallery image ${index + 1}`} loading="lazy" />
                             </div>
                         ))}
                     </div>

@@ -16,7 +16,6 @@ import paccemPage2 from '/media/PACCEM/page-2.png';
 
 import gridawarePage1 from '/media/Projet_Gridaware/page-1.png';
 import gridawarePage2 from '/media/Projet_Gridaware/page-2.png';
-import gridawarePage3 from '/media/Projet_Gridaware/page-3.png';
 
 import resimPage1 from '/media/hybrid_digital_twin/page-1.png';
 import resimPage2 from '/media/hybrid_digital_twin/page-2.png';
@@ -160,33 +159,32 @@ export const projectsData = [
   },
   {
     id: 'gridaware',
-    title: 'GridAware: Smart EV Charging',
+    title: 'GridAware EV Optimizer',
     role: 'Full-Stack Developer',
     duration: 'July 2025',
-    summary: 'A real-time Python dashboard utilizing dynamic Awattar market data and rolling-window algorithms to recommend the most cost-effective EV charging times.',
-    impact: 'Empowered EV owners to minimize charging costs while supporting grid stability by aligning consumption with periods of high renewable generation.',
-    tech: ['Python', 'Dash', 'Pandas', 'Plotly', 'REST APIs'],
+    summary: 'A full-stack web application featuring a React glassmorphism UI and a FastAPI backend to optimize EV charging using dynamic day-ahead electricity prices.',
+    impact: 'Empowered EV owners to minimize charging costs by strategically scheduling sessions based on real-time EPEX Spot market prices.',
+    tech: ['React', 'FastAPI', 'Pandas', 'Recharts', 'Vite'],
     techStackDetailed: {
-      'Framework': 'Dash, Plotly',
-      'Backend Logic': 'Python, Pandas (Time-Series Analytics)',
+      'Frontend': 'React (Vite), Recharts, Lucide React, Vanilla CSS',
+      'Backend Logic': 'FastAPI, Python, Pandas (Time-Series Analytics)',
       'Data Integration': 'Awattar DE Market REST API',
-      'State Management': 'Dash dcc.Store (Client-side persistence)'
+      'Design': 'Modern Glassmorphism UI'
     },
-    overview: 'As dynamic electricity tariffs become standard, GridAware helps consumers navigate market volatility. This application integrates live day-ahead pricing from the Awattar Germany API. Behind the scenes, a Pandas-driven rolling-sum optimization algorithm processes user-specific EV parameters (battery capacity, target SoC, efficiency) to identify the absolute cheapest continuous charging window, immediately translating complex market signals into tangible consumer savings.',
+    overview: 'GridAware is a smart EV charging dashboard designed to minimize charging costs by strategically scheduling sessions. The application features a robust quantitative energy modeling engine built with FastAPI and Pandas, paired with a highly responsive React frontend. It processes user-specific EV parameters to identify the absolute cheapest continuous charging block with fractional-hour precision, accurately accounting for true AC/DC efficiency losses and custom SoC thresholds.',
     features: [
-      '**Live Market Optimization**: Real-time integration with the Awattar DE API to fetch and visualize hourly electricity market rates.',
-      '**Smart Recommendation Engine**: Rolling-window Pandas algorithm calculates the single cheapest continuous charging block tailored to the vehicle\'s limits.',
-      '**Interactive Visual Overlay**: Intuitive Plotly charts dynamically highlight actionable charging windows against price spikes.',
-      '**Resilient Architecture**: Built-in network error handling and JSON caching to ensure high availability even during external API outages.'
+      '**Live Market Optimization**: Real-time integration with the Awattar API to fetch live day-ahead electricity spot prices.',
+      '**Smart Recommendation Engine**: Utilizes a Pandas-based rolling-window algorithm to isolate the absolute cheapest contiguous charging block.',
+      '**Fractional-Hour Precision**: Maps the charging window down to the minute, incorporating custom time windows and true AC/DC efficiency losses.',
+      '**Interactive Visualizations**: Features interactive zooming/panning area plots powered by Recharts, beautifully mapping the optimal charging window.'
     ],
     heroImage: gridawareImg,
     gallery: [
       gridawarePage1,
-      gridawarePage2,
-      gridawarePage3
+      gridawarePage2
     ],
     links: {
-      demo: 'https://huggingface.co/spaces/Vaijayanth-sheri/gridaware',
+      demo: 'https://gridaware-ev-optimizer.vercel.app/',
       github: 'https://github.com/vaijayanth-sheri/GridAware-Smart-EV-Charging-Dashboard'
     },
   },

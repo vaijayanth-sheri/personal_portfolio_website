@@ -25,6 +25,9 @@ const Home = () => {
     visible: { opacity: 1, y: 0 }
   };
 
+  // Parse hero title into clean segments without dangling pipes
+  const titleSegments = hero.title.split('|').map(s => s.trim()).filter(Boolean);
+
   return (
     <div className={styles.container}>
 
@@ -47,9 +50,9 @@ const Home = () => {
             </h1>
             <FocusText>
               <h2 className={styles.title}>
-                {hero.title.split('|').map((tag, index, arr) => (
+                {titleSegments.map((tag, index, arr) => (
                   <span key={index} style={{ display: 'block', marginBottom: '0.3rem' }}>
-                    {tag.trim()}{index < arr.length - 1 ? ' |' : ''}
+                    {tag}{index < arr.length - 1 ? ' /' : ''}
                   </span>
                 ))}
               </h2>
@@ -71,8 +74,6 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          onClick={() => navigate('/projects/job-tracker')}
-          style={{ cursor: 'pointer' }}
         >
           <div className={styles.jobTrackerInfo}>
             <span className={styles.jobTrackerTagline}>To help Job seekers</span>
@@ -87,14 +88,17 @@ const Home = () => {
               <span>Tailwind CSS</span>
             </div>
             <div className={styles.jobTrackerActions}>
-              <a href="https://job-application-tracker-tan-seven.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" className={styles.btnPrimaryGlow} data-cursor-pointer="true" onClick={(e) => e.stopPropagation()}>
+              <a href="https://job-application-tracker-tan-seven.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" className={styles.btnPrimaryGlow} data-cursor-pointer="true">
                 Try now
               </a>
+              <Link to="/projects/job-tracker" className={styles.projectBtn} data-cursor-pointer="true">
+                View Details
+              </Link>
             </div>
           </div>
-          <div className={styles.jobTrackerVisual}>
+          <Link to="/projects/job-tracker" className={styles.jobTrackerVisual} data-cursor-pointer="true">
             <img src={jobTrackerImg} alt="JobTracker Interface" />
-          </div>
+          </Link>
         </motion.div>
       </section>
 
@@ -123,33 +127,36 @@ const Home = () => {
             >
               {selectedWork.map((project) => (
                 <SwiperSlide key={project.id} className={styles.swiperSlide}>
-                  <article className={styles.projectCard} data-id={project.id.toUpperCase()} data-cursor-pointer="true" onClick={() => navigate(`/projects/${project.id}`)} style={{ cursor: 'pointer' }}>
-                    <div className={styles.projectScreenshot}>
-                      {project.screenshot && project.screenshot.includes('[TODO') ? (
-                        <span className={styles.screenshotPlaceholder}>{project.screenshot}</span>
-                      ) : (
-                        <img src={project.screenshot} alt={`${project.name} Screenshot`} className={styles.screenshotImg} />
+                  <article className={styles.projectCard} data-id={project.id.toUpperCase()}>
+                    <Link to={`/projects/${project.id}`} className={styles.cardOverlayLink} data-cursor-pointer="true" aria-label={`View ${project.name} project details`}>
+                      <div className={styles.projectScreenshot}>
+                        {project.screenshot && typeof project.screenshot === 'string' && project.screenshot.includes('[TODO') ? (
+                          <div className={styles.screenshotFallback} aria-hidden="true" />
+                        ) : (
+                          <img src={project.screenshot} alt={`${project.name} Screenshot`} className={styles.screenshotImg} />
+                        )}
+                      </div>
+                      <div className={styles.projectContent}>
+                        <div className={styles.projectHeader}>
+                          <h3 className={styles.projectName}>{project.name}</h3>
+                          {project.isLab && <span className={styles.labBadge}>LAB / ONGOING</span>}
+                        </div>
+                        <p className={styles.projectOneLiner}>{project.oneLiner}</p>
+                        <ul className={styles.projectFlow}>
+                          <li><strong>The Challenge</strong> {project.problem}</li>
+                          <li><strong>The Solution</strong> {project.approach}</li>
+                          <li><strong>The Outcome</strong> {project.output}</li>
+                        </ul>
+                      </div>
+                    </Link>
+                    {/* External links are OUTSIDE the card link to avoid nesting */}
+                    <div className={styles.projectLinks}>
+                      {project.demo && project.demo !== '#' && !project.demo.includes('[TODO') && (
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true">Execute Demo</a>
                       )}
-                    </div>
-                    <div className={styles.projectContent}>
-                      <div className={styles.projectHeader}>
-                        <h3 className={styles.projectName}>{project.name}</h3>
-                        {project.isLab && <span className={styles.labBadge}>LAB / ONGOING</span>}
-                      </div>
-                      <p className={styles.projectOneLiner}>{project.oneLiner}</p>
-                      <ul className={styles.projectFlow}>
-                        <li><strong>The Challenge</strong> {project.problem}</li>
-                        <li><strong>The Solution</strong> {project.approach}</li>
-                        <li><strong>The Outcome</strong> {project.output}</li>
-                      </ul>
-                      <div className={styles.projectLinks}>
-                        {project.demo && project.demo !== '#' && !project.demo.includes('[TODO') && (
-                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true" onClick={(e) => e.stopPropagation()}>Execute Demo</a>
-                        )}
-                        {project.repo && project.repo !== '#' && !project.repo.includes('[TODO') && (
-                          <a href={project.repo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true" onClick={(e) => e.stopPropagation()}>Source Code</a>
-                        )}
-                      </div>
+                      {project.repo && project.repo !== '#' && !project.repo.includes('[TODO') && (
+                        <a href={project.repo} target="_blank" rel="noopener noreferrer" className={styles.projectBtn} data-cursor-pointer="true">Source Code</a>
+                      )}
                     </div>
                   </article>
                 </SwiperSlide>
@@ -177,18 +184,20 @@ const Home = () => {
 
           <div className={styles.labGrid}>
             {homeData.labProjects.map((project) => (
-              <article key={project.id} className={styles.labCard} data-id={project.id.toUpperCase()} data-cursor-pointer="true" onClick={() => navigate(`/projects/${project.id}`)} style={{ cursor: 'pointer' }}>
-                <div className={styles.labScreenshot}>
-                  <img src={project.screenshot} alt={project.name} />
-                  <div className={styles.labOverlay}>
-                    <span className={styles.statusBadge}>IN_DEVELOPMENT</span>
+              <article key={project.id} className={styles.labCard} data-id={project.id.toUpperCase()}>
+                <Link to={`/projects/${project.id}`} className={styles.cardOverlayLink} data-cursor-pointer="true" aria-label={`View ${project.name} lab project details`}>
+                  <div className={styles.labScreenshot}>
+                    <img src={project.screenshot} alt={project.name} />
+                    <div className={styles.labOverlay}>
+                      <span className={styles.statusBadge}>IN_DEVELOPMENT</span>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.labContent}>
-                  <h3 className={styles.labName}>{project.name}</h3>
-                  <p className={styles.labOneLiner}>{project.oneLiner}</p>
-                  <p className={styles.labDesc}>{project.approach}</p>
-                </div>
+                  <div className={styles.labContent}>
+                    <h3 className={styles.labName}>{project.name}</h3>
+                    <p className={styles.labOneLiner}>{project.oneLiner}</p>
+                    <p className={styles.labDesc}>{project.approach}</p>
+                  </div>
+                </Link>
               </article>
             ))}
           </div>

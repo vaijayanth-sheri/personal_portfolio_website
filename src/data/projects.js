@@ -33,6 +33,7 @@ import pypsaGenPage2 from '/media/pypsa_code_generator/page-2.png';
 import pvlibGuiImg from '/media/PVLib_GUI/header.png';
 import pvlibGuiPage1 from '/media/PVLib_GUI/page-1.png';
 import pvlibGuiPage2 from '/media/PVLib_GUI/page-2.png';
+import pvlibGuiPage3 from '/media/PVLib_GUI/page-3.png';
 
 import windLibGuiImg from '/media/WindLib_GUI/header.png';
 import windLibGuiPage1 from '/media/WindLib_GUI/page-1.png';
@@ -341,29 +342,30 @@ export const projectsData = [
   },
   {
     id: 'pvlib-gui',
-    title: 'PVlib data generator',
-    role: 'Open Source Developer',
-    duration: '2024',
-    summary: 'An open-source modeling engine built with Streamlit and pvlib that democratizes access to bankable solar production time-series globally.',
-    impact: 'Streamlined rigorous PV feasibility studies by harmonizing disparate global weather datasets into a standardized, fully transparent simulation workflow.',
-    tech: ['Python', 'Streamlit', 'pvlib', 'Pandas', 'ReportLab'],
+    title: 'PVLib GUI - Solar Energy Yield Assessment',
+    role: 'Full-Stack Developer',
+    duration: '2024 - Present',
+    summary: 'A modern, highly interactive, and extremely performant Solar PV simulation dashboard powered by PVLib-Python on the backend and React + Vite on the frontend.',
+    impact: 'Modernized solar PV modeling by entirely replacing the legacy Streamlit architecture with a blazing-fast decoupled React/FastAPI stack, enabling instantaneous client-side UI rendering alongside heavy numerical computing.',
+    tech: ['React', 'FastAPI', 'PVLib', 'Pandas', 'Plotly.js'],
     techStackDetailed: {
-      'Core Engine': 'PVLib Python (ModelChain, Perez, Faiman)',
-      'Data Pipelines': 'NASA POWER API, PVGIS API',
-      'Processing': 'Pandas, Timezonefinder',
-      'Reporting': 'ReportLab (Automated PDF Generation)'
+      'Frontend': 'React, Vite, Plotly.js, Leaflet, jsPDF',
+      'Backend': 'FastAPI, Python, PVLib, Pandas, Uvicorn',
+      'Data Integration': 'PVGIS API, OpenMeteo API, Nominatim (Geocoding)',
+      'Reporting': 'jsPDF (Branded PDF generation), CSV Extraction'
     },
-    overview: 'APDG addresses the opacity and fragmentation inherent in commercial solar software. It ingests weather data from global sources like PVGIS and NASA POWER, utilizing Pandas and `timezonefinder` to accurately align 8,760-hour datasets. Where variables are missing, it dynamically applies physics-based models (like DIRINT/Erbs for irradiance imputation). Driven by the `pvlib` engine, it performs highly rigorous solar modeling and prioritizes transparency by exporting explicit data provenance logs alongside its results.',
+    overview: 'This application provides engineering-grade solar PV modeling and yield assessment through a beautiful, seamless interface. It replaces previous monolithic setups with a decoupled architecture. The FastAPI server handles all complex PVLib model chain processing—including granular system sizing, azimuth, tilt, and access to CEC Modules and Sandia Inverters databases. Meanwhile, the React client instantly aggregates 8,760 hourly data points into Hourly, Daily, and Monthly profiles without browser lag, utilizing Plotly for deep interactive visualizations.',
     features: [
-      '**Global API Harmonization**: Seamlessly normalizes varying API schemas (NASA POWER vs PVGIS) and executes physics-based imputation for missing irradiance data.',
-      '**Advanced Time-Series Processing**: Uses complex Pandas pipelines to precisely localize UTC datasets across the globe based purely on coordinate inputs.',
-      '**Rigorous Physical Modeling**: Employs industry-standard pvlib algorithms to model AC/DC conversions, thermal derating, and transposition.',
-      '**Bankable Automated Reporting**: Generates 100% reproducible PDF feasibility studies that include explicit data provenance and KPI summaries.'
+      '**Interactive Site Selection**: Leaflet map integration and OpenStreetMap (Nominatim) search with automatic coordinate and timezone extraction.',
+      '**Dynamic Weather APIs**: Automatically fetches hourly TMY/weather data from PVGIS or OpenMeteo based on the selected location.',
+      '**High-Performance Analytics**: 8,760 hourly data points computed instantaneously via FastAPI and aggregated via Pandas into multi-resolution profiles.',
+      '**Interactive Visualizations & Reporting**: Deep zoom and pan support across all time series via react-plotly.js, plus one-click PDF engineering report generation using jsPDF.'
     ],
     heroImage: pvlibGuiImg,
     gallery: [
       pvlibGuiPage1,
-      pvlibGuiPage2
+      pvlibGuiPage2,
+      pvlibGuiPage3
     ],
     links: {
       demo: 'https://pvlibdatageneratorgui-nhqbws6dkwrgp8ach48idz.streamlit.app/',

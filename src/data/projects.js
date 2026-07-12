@@ -368,7 +368,7 @@ export const projectsData = [
       pvlibGuiPage3
     ],
     links: {
-      demo: 'https://pvlibdatageneratorgui-nhqbws6dkwrgp8ach48idz.streamlit.app/',
+      demo: 'https://pvlib-gui.vercel.app/',
       github: 'https://github.com/vaijayanth-sheri/PVLib_data_generator_GUI'
     },
   },

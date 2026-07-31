@@ -11,7 +11,7 @@ export const profileData = {
                 title: "Working Student – Utility Infrastructure Asset Simulation",
                 role: "Stadtwerke München (SWM), Germany",
                 date: "Nov 2025 – Present",
-                description: "Working within a large municipal utility environment supporting the data foundations used for infrastructure planning and asset simulation. Key responsibilities include managing and processing infrastructure datasets using PostgreSQL and SQL, validating asset and operational data, and preparing datasets for lifecycle, risk, and cost simulation models."
+                description: "Working within a large municipal utility environment supporting the data foundations used for infrastructure planning and asset simulation. Key responsibilities include managing and processing infrastructure datasets using PostgreSQL and SQL, validating asset and operational data, and preparing datasets for lifecycle, risk, and cost simulation models. Additionally, I am supporting the team's transition towards Microsoft Fabric, gaining hands-on experience by assisting in the development of the asset simulation data infrastructure within this new ecosystem."
             },
             {
                 id: "master-thesis",

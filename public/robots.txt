@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vaijayanth-sheri.netlify.app/sitemap.xml

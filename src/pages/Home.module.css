@@ -110,7 +110,12 @@
 }
 
 :global([data-theme="light"]) .btnPrimary {
-  color: #FFFFFF; /* High contrast against the Solar Orange accent */
+  background-color: var(--color-primary);
+  color: var(--color-base);
+}
+
+:global([data-theme="light"]) .btnPrimary:hover {
+  background-color: #1A2445;
 }
 
 .btnPrimary:hover {
@@ -757,7 +762,14 @@
 }
 
 :global([data-theme="light"]) .btnPrimaryGlow {
-  color: #FFFFFF;
+  background-color: var(--color-primary);
+  color: var(--color-base);
+  box-shadow: none;
+}
+
+:global([data-theme="light"]) .btnPrimaryGlow:hover {
+  background-color: #1A2445;
+  transform: translateY(-2px);
 }
 
 .btnPrimaryGlow:hover {

@@ -36,16 +36,16 @@
 }
 
 [data-theme="light"] {
-  --color-background: #E5E7EB; /* More intense light grey */
-  --color-surface: rgba(255, 255, 255, 0.6); /* Translucent white to blend with canvas */
-  --color-surface-hover: rgba(255, 255, 255, 0.85);
-  --color-primary: #020617; /* Slate 950 - pure dark for maximum readability */
-  --color-secondary: #1E293B; /* Slate 800 - very crisp against grey */
-  --color-border: #D1D5DB; /* Darker border for contrast */
-  --color-accent: #EA580C; /* Vibrant Solar Orange for high contrast and warmth */
-  --color-accent-hover: #C2410C;
-  --color-accent-secondary: #059669; /* Deep Emerald */
-  --color-base: #E5E7EB;
+  --color-background: #F5F2EC; /* Soft Ivory */
+  --color-surface: #FFFFFF; /* Pure White */
+  --color-surface-hover: #E5E0D8; /* Light Stone */
+  --color-primary: #0C132B; /* Midnight Navy */
+  --color-secondary: #625E58; /* Secondary Text */
+  --color-border: #E5E0D8; /* Light Stone */
+  --color-accent: #C70F19; /* Crimson Red */
+  --color-accent-hover: #A10F18; /* Muted Crimson */
+  --color-accent-secondary: #729A82; /* Sage Energy */
+  --color-base: #F5F2EC; /* Soft Ivory */
 }
 
 *, *::before, *::after {
@@ -90,8 +90,8 @@ body::before {
 
 [data-theme="light"] body::before {
   background-image: 
-    linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(12, 19, 43, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(12, 19, 43, 0.05) 1px, transparent 1px);
 }
 
 a {

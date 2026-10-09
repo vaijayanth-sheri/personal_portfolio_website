@@ -33,6 +33,24 @@
   transform: translateY(-3px);
 }
 
+:global([data-theme="light"]) .footer {
+  background-color: var(--color-primary); /* Midnight Navy */
+  border-top-color: var(--color-primary);
+}
+
+:global([data-theme="light"]) .footerContent,
+:global([data-theme="light"]) .footerContent p {
+  color: #A19A8F; /* Warm Stone for secondary text */
+}
+
+:global([data-theme="light"]) .socialLink {
+  color: #F5F2EC; /* Soft Ivory */
+}
+
+:global([data-theme="light"]) .socialLink:hover {
+  color: var(--color-accent); /* Crimson Red */
+}
+
 /* Mobile (< 640px) */
 @media (max-width: 639px) {
   .footer {

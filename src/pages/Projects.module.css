@@ -44,7 +44,7 @@
     border-radius: 30px;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition-fast);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
@@ -112,7 +112,7 @@
 
 /* Swiper Slide Effects */
 :global(.swiper-slide) {
-    transition: all 0.3s;
+    transition: var(--transition-fast);
     opacity: 0.4;
     transform: scale(0.9);
 }

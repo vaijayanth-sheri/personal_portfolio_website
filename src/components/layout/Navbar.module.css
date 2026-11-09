@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1024px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -64,7 +64,7 @@
 .themeToggle {
   background: none;
   border: 1px solid var(--color-border);
-  border-radius: 50%;
+  border-radius: 8px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -79,7 +79,7 @@
 .themeToggle:hover {
   color: var(--color-accent);
   border-color: var(--color-accent);
-  background: rgba(204, 255, 0, 0.05); /* very faint accent bg */
+  background: var(--color-accent-dim); /* very faint accent bg */
 }
 
 [data-theme="light"] .themeToggle:hover {
